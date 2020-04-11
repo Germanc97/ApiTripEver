@@ -67,7 +67,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'America/Bogota',
 
     /*
     |--------------------------------------------------------------------------
@@ -169,11 +169,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        ApiTripEver\Providers\AppServiceProvider::class,
+        ApiTripEver\Providers\AuthServiceProvider::class,
+        // ApiTripEver\Providers\BroadcastServiceProvider::class,
+        ApiTripEver\Providers\EventServiceProvider::class,
+        ApiTripEver\Providers\RouteServiceProvider::class,
 
     ],
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace ApiTripEver\Http\Middleware;
 
-use App\Providers\RouteServiceProvider;
+use ApiTripEver\Providers\RouteServiceProvider;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
