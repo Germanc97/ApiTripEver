@@ -21,4 +21,6 @@ Route::get('/name/{name?}', function($name = 'No especificado'){
     return 'Hola soy ' .$name;
 });
 
-Route::get('prueba/{name?}', 'PruebaController@prueba');
+#Route::get('prueba/{name?}', 'PruebaController@prueba');
+
+Route::resource('prueba','PruebaController');
