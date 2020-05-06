@@ -16,9 +16,9 @@ class CreateTableReserva extends Migration
         Schema::create('reserva', function (Blueprint $table) {
             $table->bigIncrements('IdReserva');
             $table->integer('numPersonas');
-            $table->foreign('IdEstado')->references('IdEstado')->on('estadoReserva');
-            $table->foreign('IdUsuario')->references('IdUsuario')->on('usuario');
-            $table->foreign('IdServicio')->references('IdServicios')->on('servicios');
+            $table->foreignId('IdEstado')->references('IdEstado')->on('estadoReserva');
+            $table->foreignId('IdUsuario')->references('IdUsuario')->on('usuario');
+            $table->foreignId('IdServicio')->references('IdServicios')->on('servicios');
 
             $table->timestamps();
         });

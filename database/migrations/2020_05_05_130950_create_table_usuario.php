@@ -23,9 +23,8 @@ class CreateTableUsuario extends Migration
             $table->integer('NoIdentificacion');
             $table->string('Usuario');
             $table->string('Contrasena');
-            $table->integer('IdCartera');
             $table->boolean('Tipo');
-            $table->foreign('IdHost')->references('Idhost')->on('usuarioHost');
+            $table->foreignId('IdHost')->references('IdHost')->on('usuarioHost');
             $table->timestamps();
         });
     }

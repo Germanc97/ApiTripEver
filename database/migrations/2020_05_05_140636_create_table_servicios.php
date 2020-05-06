@@ -21,9 +21,9 @@ class CreateTableServicios extends Migration
             $table->integer('MaxPersonas');
             $table->string('Descripcion');
             $table->integer('Precio');
-            $table->foreign('IdHorario')->references('IdHorario')->on('Horario');
-            $table->foreign('IdHost')->references('IdHost')->on('usuarioHost');
-            $table->foreign('IdTipoServicio')->references('IdTipoServicio')->on('tipoServicio');
+            $table->foreignId('IdHorario')->references('IdHorario')->on('horario');
+            $table->foreignId('IdHost')->references('IdHost')->on('usuarioHost');
+            $table->foreignId('IdTipoServicio')->references('IdTipoServicio')->on('tipoServicio');
             $table->timestamps();
         });
     }

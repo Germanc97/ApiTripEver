@@ -16,8 +16,8 @@ class CreateTableTarjetasRegalo extends Migration
         Schema::create('tarjetasRegalo', function (Blueprint $table) {
             $table->bigIncrements('IdTarjeta');
             $table->integer('Monto');
-            $table->foreign('Comprador')->references('IdUsuario')->on('usuario');
-            $table->foreign('Destinatario')->references('IdUsuario')->on('usuario');
+            $table->foreignId('Comprador')->references('IdUsuario')->on('usuario');
+            $table->foreignId('Destinatario')->references('IdUsuario')->on('usuario');
             $table->timestamps();
         });
     }

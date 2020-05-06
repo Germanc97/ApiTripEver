@@ -14,8 +14,8 @@ class CreateTableUsuarioHost extends Migration
     public function up()
     {
         Schema::create('usuarioHost', function (Blueprint $table) {
-            $table->bigIncrements(IdHost);
-            $table->integer('No.Cuenta');
+            $table->bigIncrements('IdHost');
+            $table->integer('NoCuenta');
             $table->string('Mail');
             $table->timestamps();
         });

@@ -17,8 +17,8 @@ class CreateTableResena extends Migration
             $table->bigIncrements('IdResena');
             $table->string('Descripcion');
             $table->date('Fecha');
-            $table->foreign('IdUsuario')->references('IdUsuario')->on('usuario');
-            $table->foreign('IdServicio')->references('IdServicios')->on('servicios');
+            $table->foreignId('IdUsuario')->references('IdUsuario')->on('usuario');
+            $table->foreignId('IdServicio')->references('IdServicios')->on('servicios');
             $table->timestamps();
         });
     }
