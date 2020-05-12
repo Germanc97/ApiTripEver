@@ -5,11 +5,15 @@ namespace ApiTripEver\Http\Controllers;
 use Illuminate\Http\Request;
 use ApiTripEver\Models\Usuario;
 use ApiTripEver\Models\Cartera;
+use ApiTripEver\Traits\CarteraUsuarioTrait;
+use ApiTripEver\Http\Controllers\CarteraController;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\QueryException;
 
 class UsuarioController extends Controller
 {
+    use CarteraUsuarioTrait;
+
     public function create(Request $request)
     {
         try
@@ -25,6 +29,7 @@ class UsuarioController extends Controller
             $usuario->Contrasena = $request->Contrasena;
             $usuario->Tipo = $request->Tipo;
             $usuario->save();
+            $this->createCartera($usuario->IdUsuario);            
             return response(null,201);
         }
         catch(QueryException $e)
@@ -86,7 +91,7 @@ class UsuarioController extends Controller
         }
     }
 
-    public function update(Request $request, $IdUsuario )
+    public function update(Request $request, $IdUsuario)
     {
         try 
         {
@@ -118,5 +123,6 @@ class UsuarioController extends Controller
         $cartera = new Cartera();
         $cartera->Monto = 0; 
         $cartera->IdUsuario = $IdUsuario;
+        $cartera->save();
     }
 }
