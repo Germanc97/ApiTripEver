@@ -8,7 +8,7 @@ class Hospedaje extends Model
 {
     protected $table = 'hospedaje';
     protected $primaryKey = 'IdHospedaje';
-    protected $fillable = ['IdHospedaje','PrecioNoche','TipoAcomodacion','Direccion','Barrio','EspecificacionDomicilio'];
+    protected $fillable = ['IdHospedaje','PrecioNoche','TipoAcomodacion','Direccion','Barrio','EspecificacionDomicilio','IdServicio'];
     public $timestamps = true; 
 
     public function servicio()

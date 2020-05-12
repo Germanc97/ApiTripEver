@@ -34,8 +34,7 @@ class ServicioController extends Controller
         {
             return response($e,400);
         }
-
-         
+       
     }
 
     public function delete($IdServicios)
@@ -119,12 +118,73 @@ class ServicioController extends Controller
 
     public function createHorario(Request $request, $IdServicios)
     {
-        $horario = new Horario();
-        $horario->FechaInicio = $request->FechaInicio; 
-        $horario->Direccion = $request->Direccion;
-        $horario->Historia = $request->Historia;
-        $horario->Descripcion = $request->Descripcion;
-        $horario->IdServicio = $IdServicios;
+        try
+        {
+            $horario = new Horario($IdServicios);
+            $horario->FechaInicio = $request->FechaInicio; 
+            $horario->Direccion = $request->Direccion;
+            $horario->Historia = $request->Historia;
+            $horario->Descripcion = $request->Descripcion;
+            $horario->IdServicio = $IdServicios;
+            return response(null,201);
+        }
+        catch(QueryException $e)
+        {
+            return response($e,400);
+        }        
+    }
+
+    public function createHospedaje(Request $request, $IdServicios)
+    {
+        try
+        {
+            $hospedaje = new Hospedaje();
+            $hospedaje->PrecioNoche = $request->PrecioNoche;
+            $hospedaje->TipoAcomodacion = $request->TipoAcomodacion;
+            $hospedaje->Direccion = $request->Direccion;
+            $hospedaje->Barrio = $request->Barrio;           
+            $hospedaje->EspecificacionDomicilio = $request->EspecificacionDomicilio;           
+            $hospedaje->IdServicio = $IdServicios;
+            $hospedaje->save();
+            return response(null,201);     
+        }
+        catch(QueryException $e)
+        {
+            return response($e,400);
+        }        
+    }
+
+    public function consultaTipoServicio($IdTipoServicio)
+    {
+        try
+        {
+            $tipoServicio = TipoServicio::with('NombreTipo')->findOrFail($IdTipoServicio);
+            return response($tipoServicio,201);     
+        }
+        catch(QueryException $e)
+        {
+            return response($e,400);
+        }        
+    }
+
+    public function createActividad(Request $request, $IdServicios)
+    {
+        try
+        {
+            $actividades = new Actividad();
+            $actividades->Nombre = $request->Nombre;
+            $actividades->Duracion = $request->Duracion;
+            $actividades->EdadMinima = $request->EdadMinima;
+            $actividades->Descripcion = $request->Nombre;
+            $actividades->Precio = $request->Precio;
+            $actividades->IdServicio = $IdServicios;
+            $actividades->save();
+            return response(null,201);
+        }
+        catch(QueryException $e)
+        {
+            return response($e,400);
+        }        
     }
 
 }

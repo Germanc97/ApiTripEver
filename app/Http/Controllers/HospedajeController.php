@@ -19,6 +19,7 @@ class HospedajeController extends Controller
             $hospedaje->Direccion = $request->Direccion;
             $hospedaje->Barrio = $request->Barrio;           
             $hospedaje->EspecificacionDomicilio = $request->EspecificacionDomicilio;           
+            $hospedaje->IdServicios = $request->IdServicios;
             $hospedaje->save();
             return response(null,201);     
         }
@@ -83,12 +84,13 @@ class HospedajeController extends Controller
     {
         try 
         {
-            $hospedaje = Resena::findOrFail($IdHospedaje);
+            $hospedaje = Hospedaje::findOrFail($IdHospedaje);
             $hospedaje->PrecioNoche = $request->PrecioNoche;
             $hospedaje->TipoAcomodacion = $request->TipoAcomodacion;
             $hospedaje->Direccion = $request->Direccion;
             $hospedaje->Barrio = $request->Barrio;           
             $hospedaje->EspecificacionDomicilio = $request->EspecificacionDomicilio;           
+            $hospedaje->IdServicio = $request->IdServicios;
             $hospedaje->save();
             return response(null,201);     
         }

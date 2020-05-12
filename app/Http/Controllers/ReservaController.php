@@ -17,7 +17,7 @@ class ReservaController extends Controller
             $reserva->numPersonas = $request->numPersonas;
             $reserva->IdEstado = $request->IdEstado;
             $reserva->IdUsuario = $request->IdUsuario;
-            $reserva->IdServicios = $request->IdServicios;
+            $reserva->IdServicio = $request->IdServicio;
             $reserva->save();
             return response(null,201);
         }
@@ -31,7 +31,7 @@ class ReservaController extends Controller
     {
         try
         {
-            $reserva = Cartera::findOrFail($IdReserva);
+            $reserva = Reserva::findOrFail($IdReserva);
             $reserva->delete();
             return response(null,200);
         }
@@ -86,7 +86,7 @@ class ReservaController extends Controller
             $reserva->numPersonas = $request->numPersonas;
             $reserva->IdEstado = $request->IdEstado;
             $reserva->IdUsuario = $request->IdUsuario;
-            $reserva->IdServicios = $request->IdServicios;
+            $reserva->IdServicio = $request->IdServicio;
             $reserva->save(); 
             return response(null,201);
         }

@@ -8,7 +8,7 @@ class Resena extends Model
 {
     protected $table = 'resena';
     protected $primaryKey = 'IdResena';
-    protected $fillable = ['IdResena','Descripcion','Fecha'];
+    protected $fillable = ['IdResena','Descripcion','Fecha','IdUsuario','IdServicio'];
     public $timestamps = true;
 
     public function usuario()

@@ -17,7 +17,8 @@ class HorarioController extends Controller
             $horario->FechaInicio = $request->FechaInicio;
             $horario->Direccion = $request->Direccion;
             $horario->Historia = $request->Historia;
-            $horario->Descripcion = $request->Descripcion;           
+            $horario->Descripcion = $request->Descripcion;
+            $horario->IdServicio = $request->IdServicio;           
             $horario->save();
             return response(null,201);     
         }
@@ -86,7 +87,8 @@ class HorarioController extends Controller
             $horario->FechaInicio = $request->FechaInicio;
             $horario->Direccion = $request->Direccion;
             $horario->Historia = $request->Historia;
-            $horario->Descripcion = $request->Descripcion;           
+            $horario->Descripcion = $request->Descripcion;
+            $horario->IdServicio = $request->IdServicio;            
             $horario->save();
             return response(null,201);     
         }
