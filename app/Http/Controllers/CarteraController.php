@@ -15,7 +15,6 @@ class CarteraController extends Controller
 
     public function create(Request $request)
     {
-        $cartera = new Cartera();
         $this->createCartera($request->IdUsuario); 
     }
 

@@ -38,7 +38,5 @@ trait CarteraUsuarioTrait {
         {
             return response($e,404);
         } 
-        
-
     }  
 }
