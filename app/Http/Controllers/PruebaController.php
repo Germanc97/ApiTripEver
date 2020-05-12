@@ -6,6 +6,6 @@ use ApiTripEver\Http\Controllers\Controller;
 
 class PruebaController extends Controller {
     public function prueba($param){
-        return 'Estoy dentro del controlador '. $param;
+        return 'Estoy dentro del controlador 1 2 3 '. $param;
     }
 }
