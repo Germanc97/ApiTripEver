@@ -44,6 +44,7 @@ class UsuarioController extends Controller
     {
         try
         {
+            $this->deleteCarteraUsuario($IdUsuario);
             $usuario = Usuario::findOrFail($IdUsuario);
             $usuario->delete();
             return response(null,200);

@@ -42,25 +42,7 @@ class CarteraController extends Controller
             return response($e,404);
         } 
         
-    }
-
-    public function deleteCarteraUsuario($IdUsuario)
-    {
-        try
-        {
-            $cartera = Cartera::findOrFail($IdUsuario);
-            $cartera->delete();
-            return response(null,200);
-        }
-        catch(QueryException $e)
-        {
-            return response($e,400);
-        }
-        catch(ModelNotFoundException $e)
-        {
-            return response($e,404);
-        } 
-    }   
+    } 
     
     public function getCartera($IdCartera)
     {
