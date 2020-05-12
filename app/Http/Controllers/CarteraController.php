@@ -44,7 +44,7 @@ class CarteraController extends Controller
         
     }
 
-    public function getUsuario($IdCartera)
+    public function getCartera($IdCartera)
     {
         try
         {

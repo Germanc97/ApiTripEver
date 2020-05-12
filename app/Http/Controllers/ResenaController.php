@@ -46,7 +46,7 @@ class ResenaController extends Controller
         
     }
 
-    public function getUsuario($IdResena)
+    public function getResena($IdResena)
     {
         try
         {

@@ -56,7 +56,7 @@ class ServicioController extends Controller
         
     }
 
-    public function getUsuario($IdServicios)
+    public function getServicio($IdServicios)
     {
         try
         {
@@ -74,7 +74,7 @@ class ServicioController extends Controller
         
     }
 
-    public function allUsuarios()
+    public function allServicios()
     {
         
         try
