@@ -23,4 +23,4 @@ Route::get('/name/{name?}', function($name = 'No especificado'){
 
 Route::get('prueba/{name?}', 'PruebaController@prueba');
 
-Route::resource('prueba','PruebaController');
+Route::resource('prueba','PruebaController 1 2 3');
