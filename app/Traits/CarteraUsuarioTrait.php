@@ -15,7 +15,7 @@ trait CarteraUsuarioTrait {
         return response(null,201);
     }
 
-    public function deleteCarteraUsuario($IdUsuario)
+    public function deleteCartera($IdUsuario)
     {
         $cartera = Cartera::where("IdUsuario",$IdUsuario);
         $cartera->delete();
