@@ -4,44 +4,24 @@ namespace ApiTripEver\Http\Controllers;
 
 use Illuminate\Http\Request;
 use ApiTripEver\Models\Cartera;
+use ApiTripEver\Traits\CarteraUsuarioTrait;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\QueryException;
 
 class CarteraController extends Controller
 {
+
+    use CarteraUsuarioTrait;
+
     public function create(Request $request)
     {
-        try
-        {
-            $cartera = new Cartera();
-            $cartera->Monto = $request->Monto;
-            $cartera->IdUsuario = $request->IdUsuario;
-            $cartera->save();
-            return response(null,201);
-        }
-        catch(QueryException $e)
-        {
-            return response($e,400);
-        }        
+        $cartera = new Cartera();
+        $this->createCartera($request->IdUsuario); 
     }
 
     public function delete($IdCartera)
     {
-        try
-        {
-            $cartera = Cartera::findOrFail($IdCartera);
-            $cartera->delete();
-            return response(null,200);
-        }
-        catch(QueryException $e)
-        {
-            return response($e,400);
-        }
-        catch(ModelNotFoundException $e)
-        {
-            return response($e,404);
-        } 
-        
+        $this->deleteCartera($IdCartera); 
     } 
     
     public function getCartera($IdCartera)
