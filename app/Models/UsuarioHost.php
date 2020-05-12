@@ -8,12 +8,12 @@ class UsuarioHost extends Model
 {
     protected $table = 'usuarioHost';
     protected $primaryKey = 'IdHost';
-    protected $fillable = ['IdHost','NoCuenta','Mail'];
+    protected $fillable = ['IdHost','NoCuenta','Mail','IdUsuario'];
     public $timestamps = true;
 
     public function usuario()
     {
-        return $this->belongsTo('App\Models\Usuario','IdHost');
+        return $this->belongsTo('App\Models\Usuario','IdUsuario');
     }
 
     public function servicios()

@@ -17,13 +17,13 @@ class UsuarioController extends Controller
             $usuario = new Usuario();
             $usuario->Nombre = $request->Nombre;
             $usuario->Mail = $request->Mail;
+            $usuario->Telefono = $request->Telefono;
             $usuario->FechaNacimiento = $request->FechaNacimiento;
             $usuario->TipoIdentificacion = $request->TipoIdentificacion;
             $usuario->NoIdentificacion = $request->NoIdentificacion;
             $usuario->Usuario = $request->Usuario;
             $usuario->Contrasena = $request->Contrasena;
             $usuario->Tipo = $request->Tipo;
-            $usuario->IdHost = $request->IdHost;
             $usuario->save();
             return response(null,201);
         }

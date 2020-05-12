@@ -8,12 +8,12 @@ class Usuario extends Model
 {
     protected $table = 'usuario';
     protected $primaryKey = 'IdUsuario';
-    protected $fillable = ['IdUsuario','Nombre','Mail','Telefono','FechaNacimiento','TipoIdentificacion','NoIdentificacion','Usuario','Contrasena','Tipo','IdHost'];
+    protected $fillable = ['IdUsuario','Nombre','Mail','Telefono','FechaNacimiento','TipoIdentificacion','NoIdentificacion','Usuario','Contrasena','Tipo'];
     public $timestamps = true;
 
     public function usuarioHost()
     {
-        return $this->belongsTo('App\Models\UsuarioHost','IdHost');
+        return $this->belongsTo('App\Models\UsuarioHost','IdUsuario');
     }
 
     public function cartera()

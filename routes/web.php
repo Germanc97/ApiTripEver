@@ -24,3 +24,5 @@ Route::get('/name/{name?}', function($name = 'No especificado'){
 Route::get('prueba/{name?}', 'PruebaController@prueba');
 
 Route::resource('prueba','PruebaController');
+
+Route::post('/createUsuario','UsuarioController@create');
