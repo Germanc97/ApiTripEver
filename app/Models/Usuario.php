@@ -8,7 +8,7 @@ class Usuario extends Model
 {
     protected $table = 'usuario';
     protected $primaryKey = 'IdUsuario';
-    protected $fillable = ['IdUsuario','Nombre','Mail','Telefono','FechaNacimiento','TipoIdentificacion','NoIdentificacion','Usuario','Contrasena','Tipo'];
+    protected $fillable = ['IdUsuario','Nombre','Mail','Telefono','FechaNacimiento','TipoIdentificacion','NoIdentificacion','Usuario','Contrasena','Tipo','IdHost'];
     public $timestamps = true;
 
     public function usuarioHost()

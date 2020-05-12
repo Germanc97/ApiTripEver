@@ -4,6 +4,7 @@ namespace ApiTripEver\Http\Controllers;
 
 use Illuminate\Http\Request;
 use ApiTripEver\Models\Usuario;
+use ApiTripEver\Models\Cartera;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\QueryException;
 
@@ -21,7 +22,8 @@ class UsuarioController extends Controller
             $usuario->NoIdentificacion = $request->NoIdentificacion;
             $usuario->Usuario = $request->Usuario;
             $usuario->Contrasena = $request->Contrasena;
-            $usuario->NoTipombre = $request->Tipo;
+            $usuario->Tipo = $request->Tipo;
+            $usuario->IdHost = $request->IdHost;
             $usuario->save();
             return response(null,201);
         }
@@ -96,7 +98,7 @@ class UsuarioController extends Controller
             $usuario->NoIdentificacion = $request->NoIdentificacion;
             $usuario->Usuario = $request->Usuario;
             $usuario->Contrasena = $request->Contrasena;
-            $usuario->NoTipombre = $request->Tipo;
+            $usuario->Tipo = $request->Tipo;
             $usuario->save(); 
             return response(null,201);
 
@@ -111,5 +113,10 @@ class UsuarioController extends Controller
         }        
     }
 
-    
+    public function createCartera($IdUsuario)
+    {
+        $cartera = new Cartera();
+        $cartera->Monto = 0; 
+        $cartera->IdUsuario = $IdUsuario;
+    }
 }

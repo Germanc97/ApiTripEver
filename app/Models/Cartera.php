@@ -8,7 +8,7 @@ class Cartera extends Model
 {
     protected $table = 'cartera';
     protected $primaryKey = 'IdCartera';
-    protected $fillable = ['IdCartera','Monto'];
+    protected $fillable = ['IdCartera','Monto,IdUsuario'];
     public $timestamps = true;
 
     public function usuario()
