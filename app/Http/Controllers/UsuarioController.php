@@ -117,12 +117,4 @@ class UsuarioController extends Controller
             return response($e,404);
         }        
     }
-
-    public function createCartera($IdUsuario)
-    {
-        $cartera = new Cartera();
-        $cartera->Monto = 0; 
-        $cartera->IdUsuario = $IdUsuario;
-        $cartera->save();
-    }
 }
