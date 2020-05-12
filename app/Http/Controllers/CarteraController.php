@@ -18,9 +18,9 @@ class CarteraController extends Controller
         $this->createCartera($request->IdUsuario); 
     }
 
-    public function delete($IdCartera)
+    public function delete($IdUsuario)
     {
-        $this->deleteCartera($IdCartera); 
+        $this->deleteCartera($IdUsuario); 
     } 
     
     public function getCartera($IdCartera)

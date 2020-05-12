@@ -119,7 +119,7 @@ Route::get('/getCarteras','CarteraController@allCarteras');
 
 Route::put('/updateCartera/{IdCartera?}','HorarioController@update');
 
-Route::delete('/deleteCartera/{IdCartera?}','CarteraController@delete');
+Route::delete('/deleteCartera/{IdUsuario?}','CarteraController@delete');
 
 /***Actividad***/
 
