@@ -3,6 +3,8 @@
 namespace ApiTripEver\Traits;
 
 use ApiTripEver\Models\Cartera;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Database\QueryException;
 
 trait CarteraUsuarioTrait {
 
