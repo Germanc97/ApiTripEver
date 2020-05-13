@@ -13,6 +13,6 @@ class Lugar extends Model
     
     public function actividad()
     {
-        return $this->belongsTo('App\Models\Actividad','IdActividad');
+        return $this->belongsTo('ApiTripEver\Models\Actividad','IdActividad');
     }
 }

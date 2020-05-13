@@ -13,12 +13,12 @@ class Resena extends Model
 
     public function usuario()
     {
-        return $this->belongsTo('App\Models\Usuario','IdUsuario');
+        return $this->belongsTo('ApiTripEver\Models\Usuario','IdUsuario');
     }
 
     public function servicio()
     {
-        return $this->belongsTo('App\Models\Servicio','IdServicio');
+        return $this->belongsTo('ApiTripEver\Models\Servicio','IdServicio');
     }
 
 }

@@ -18,6 +18,6 @@ class Actividad extends Model
 
     public function lugar()
     {
-        return $this->belongsTo('App\Models\Lugar','IdActividad');
+        return $this->belongsTo('ApiTripEver\Models\Lugar','IdActividad');
     }
 }
