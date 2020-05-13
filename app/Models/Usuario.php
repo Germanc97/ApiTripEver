@@ -13,12 +13,12 @@ class Usuario extends Model
 
     public function usuarioHost()
     {
-        return $this->belongsTo('App\Models\UsuarioHost','IdHost');
+        return $this->belongsTo('ApiTripEver\Models\UsuarioHost','IdUsuario');
     }
 
     public function cartera()
     {
-        return $this->belongsTo('App\Models\Cartera','IdUsuario');
+        return $this->belongsTo('ApiTripEver\Models\Cartera','IdUsuario');
     }
 
     public function reserva()

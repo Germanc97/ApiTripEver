@@ -8,11 +8,11 @@ class Hospedaje extends Model
 {
     protected $table = 'hospedaje';
     protected $primaryKey = 'IdHospedaje';
-    protected $fillable = ['IdHospedaje','PrecioNoche','TipoAcomodacion','Direccion','Barrio','EspecificacionDomicilio'];
+    protected $fillable = ['IdHospedaje','PrecioNoche','TipoAcomodacion','Direccion','Barrio','EspecificacionDomicilio','IdServicio'];
     public $timestamps = true; 
 
     public function servicio()
     {
-        return $this->belongsTo('App\Models\Servicio','IdServicio');
+        return $this->belongsTo('ApiTripEver\Models\Servicio','IdServicio');
     }
 }

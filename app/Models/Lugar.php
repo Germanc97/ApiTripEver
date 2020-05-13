@@ -8,11 +8,11 @@ class Lugar extends Model
 {
     protected $table = 'lugar';
     protected $primaryKey = 'IdLugar';
-    protected $fillable = ['IdLugar','Nombre','Direccion','Historia','Descripcion'];
+    protected $fillable = ['IdLugar','Nombre','Direccion','Historia','Descripcion','IdActividad'];
     public $timestamps = true; 
     
     public function actividad()
     {
-        return $this->belongsTo('App\Models\Actividad','IdActividad');
+        return $this->belongsTo('ApiTripEver\Models\Actividad','IdActividad');
     }
 }

@@ -17,14 +17,13 @@ class CreateTableUsuario extends Migration
             $table->bigIncrements('IdUsuario');
             $table->string('Nombre');
             $table->string('Mail');
-            $table->integer('Telefono');
+            $table->string('Telefono');
             $table->date('FechaNacimiento');
             $table->string('TipoIdentificacion');
             $table->integer('NoIdentificacion');
             $table->string('Usuario');
             $table->string('Contrasena');
             $table->boolean('Tipo');
-            $table->foreignId('IdHost')->references('IdHost')->on('usuarioHost');
             $table->timestamps();
         });
     }

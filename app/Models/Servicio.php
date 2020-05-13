@@ -8,17 +8,17 @@ class Servicio extends Model
 {
     protected $table = 'servicios';
     protected $primaryKey = 'IdServicios';
-    protected $fillable = ['IdServicios','Titulo','Pais','Cuidad','MaxPersonas','Descripcion','Precio'];
+    protected $fillable = ['IdServicios','Titulo','Pais','Cuidad','MaxPersonas','Descripcion','Precio','IdHorario','IdHost','IdTipoServicio'];
     public $timestamps = true;
 
     public function horario()
     {
-        return $this->belongsTo('App\Models\Horario','IdHorario');
+        return $this->belongsTo('ApiTripEver\Models\Horario','IdHorario');
     }
 
     public function usuarioHost()
     {
-        return $this->belongsTo('App\Models\UsuarioHost','IdHost');
+        return $this->belongsTo('ApiTripEver\Models\UsuarioHost','IdHost');
     }
 
     public function tipoServicio()

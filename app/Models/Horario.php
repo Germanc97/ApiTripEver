@@ -8,12 +8,12 @@ class Horario extends Model
 {
     protected $table = 'horario';
     protected $primaryKey = 'IdHorario';
-    protected $fillable = ['IdHorario','FechaInicio','Direccion','Historia','Descripcion'];
+    protected $fillable = ['IdHorario','FechaInicio','Direccion','Historia','Descripcion','IdServicio'];
     public $timestamps = true;
 
     public function servicio()
     {
-        return $this->belongsTo('App\Models\Servicio','IdServicio');
+        return $this->belongsTo('ApiTripEver\Models\Servicio','IdServicio');
     }
 
 }

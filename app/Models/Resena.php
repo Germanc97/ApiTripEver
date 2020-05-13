@@ -8,17 +8,17 @@ class Resena extends Model
 {
     protected $table = 'resena';
     protected $primaryKey = 'IdResena';
-    protected $fillable = ['IdResena','Descripcion','Fecha'];
+    protected $fillable = ['IdResena','Descripcion','Fecha','IdUsuario','IdServicio'];
     public $timestamps = true;
 
     public function usuario()
     {
-        return $this->belongsTo('App\Models\Usuario','IdUsuario');
+        return $this->belongsTo('ApiTripEver\Models\Usuario','IdUsuario');
     }
 
     public function servicio()
     {
-        return $this->belongsTo('App\Models\Servicio','IdServicio');
+        return $this->belongsTo('ApiTripEver\Models\Servicio','IdServicio');
     }
 
 }

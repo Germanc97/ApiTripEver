@@ -19,7 +19,6 @@ class CreateTableHorario extends Migration
             $table->string('Direccion');
             $table->string('Historia');
             $table->string('Descripcion');
-            $table->foreignId('IdServicio')->references('IdServicios')->on('servicios');
             $table->timestamps();
         });
     }

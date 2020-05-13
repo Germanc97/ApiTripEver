@@ -8,12 +8,12 @@ class Cartera extends Model
 {
     protected $table = 'cartera';
     protected $primaryKey = 'IdCartera';
-    protected $fillable = ['IdCartera','Monto'];
+    protected $fillable = ['IdCartera','Monto,IdUsuario'];
     public $timestamps = true;
 
     public function usuario()
     {
-        return $this->belongsTo('App\Models\Usuario','IdUsuario');
+        return $this->belongsTo('ApiTripEver\Models\Usuario','IdUsuario');
     }
 
 }

@@ -8,18 +8,18 @@ class Reserva extends Model
 {
     protected $table = 'reserva';
     protected $primaryKey = 'IdReserva';
-    protected $fillable = ['IdReserva','numPersonas'];
+    protected $fillable = ['IdReserva','numPersonas','IdEstado','IdUsuario','IdServicios'];
     public $timestamps = true;
 
 
     public function estadoReserva()
     {
-        return $this->belongsTo('App\Models\EstadoReserva','IdEstado');
+        return $this->belongsTo('ApiTripEver\Models\EstadoReserva','IdEstado');
     }
 
     public function usuario()
     {
-        return $this->belongsTo('App\Models\Usuario','IdUsuario');
+        return $this->belongsTo('ApiTripEver\Models\Usuario','IdUsuario');
     }
 
     public function servicio()

@@ -13,11 +13,11 @@ class TarjetaRegalo extends Model
     
     public function Comprador()
     {
-        return $this->belongsTo('App\Models\Usuario','Comprador');
+        return $this->belongsTo('ApiTripEver\Models\Usuario','Comprador');
     }
 
     public function Destinatario()
     {
-        return $this->belongsTo('App\Models\Usuario','Destinatario');
+        return $this->belongsTo('ApiTripEver\Models\Usuario','Destinatario');
     }
 }

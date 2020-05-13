@@ -4,11 +4,16 @@ namespace ApiTripEver\Http\Controllers;
 
 use Illuminate\Http\Request;
 use ApiTripEver\Models\Usuario;
+use ApiTripEver\Models\Cartera;
+use ApiTripEver\Traits\CarteraUsuarioTrait;
+use ApiTripEver\Http\Controllers\CarteraController;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\QueryException;
 
 class UsuarioController extends Controller
 {
+    use CarteraUsuarioTrait;
+
     public function create(Request $request)
     {
         try
@@ -16,13 +21,15 @@ class UsuarioController extends Controller
             $usuario = new Usuario();
             $usuario->Nombre = $request->Nombre;
             $usuario->Mail = $request->Mail;
+            $usuario->Telefono = $request->Telefono;
             $usuario->FechaNacimiento = $request->FechaNacimiento;
             $usuario->TipoIdentificacion = $request->TipoIdentificacion;
             $usuario->NoIdentificacion = $request->NoIdentificacion;
             $usuario->Usuario = $request->Usuario;
             $usuario->Contrasena = $request->Contrasena;
-            $usuario->NoTipombre = $request->Tipo;
+            $usuario->Tipo = $request->Tipo;
             $usuario->save();
+            $this->createCartera($usuario->IdUsuario);            
             return response(null,201);
         }
         catch(QueryException $e)
@@ -37,6 +44,7 @@ class UsuarioController extends Controller
     {
         try
         {
+            $this->deleteCarteraUsuario($IdUsuario);
             $usuario = Usuario::findOrFail($IdUsuario);
             $usuario->delete();
             return response(null,200);
@@ -84,7 +92,7 @@ class UsuarioController extends Controller
         }
     }
 
-    public function update(Request $request, $IdUsuario )
+    public function update(Request $request, $IdUsuario)
     {
         try 
         {
@@ -96,7 +104,7 @@ class UsuarioController extends Controller
             $usuario->NoIdentificacion = $request->NoIdentificacion;
             $usuario->Usuario = $request->Usuario;
             $usuario->Contrasena = $request->Contrasena;
-            $usuario->NoTipombre = $request->Tipo;
+            $usuario->Tipo = $request->Tipo;
             $usuario->save(); 
             return response(null,201);
 
@@ -110,6 +118,4 @@ class UsuarioController extends Controller
             return response($e,404);
         }        
     }
-
-    
 }
