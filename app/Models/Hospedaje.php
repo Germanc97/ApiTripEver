@@ -13,6 +13,6 @@ class Hospedaje extends Model
 
     public function servicio()
     {
-        return $this->belongsTo('App\Models\Servicio','IdServicio');
+        return $this->belongsTo('ApiTripEver\Models\Servicio','IdServicio');
     }
 }

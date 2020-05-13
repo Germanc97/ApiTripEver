@@ -13,12 +13,12 @@ class TipoServicio extends Model
 
     public function reserva()
     {
-        return $this->hasMany('App\Models\Servicio','IdTipoServicio');        
+        return $this->hasMany('ApiTripEver\Models\Servicio','IdTipoServicio');        
     }
 
     public function servicio()
     {
-        return $this->hasMany('App\Models\Servicio','IdTipoServicio');
+        return $this->hasMany('ApiTripEver\Models\Servicio','IdTipoServicio');
     }
 
 }

@@ -13,12 +13,12 @@ class Servicio extends Model
 
     public function horario()
     {
-        return $this->belongsTo('App\Models\Horario','IdHorario');
+        return $this->belongsTo('ApiTripEver\Models\Horario','IdHorario');
     }
 
     public function usuarioHost()
     {
-        return $this->belongsTo('App\Models\UsuarioHost','IdHost');
+        return $this->belongsTo('ApiTripEver\Models\UsuarioHost','IdHost');
     }
 
     public function tipoServicio()

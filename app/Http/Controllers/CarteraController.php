@@ -4,6 +4,7 @@ namespace ApiTripEver\Http\Controllers;
 
 use Illuminate\Http\Request;
 use ApiTripEver\Models\Cartera;
+use ApiTripEver\Models\Usuario;
 use ApiTripEver\Traits\CarteraUsuarioTrait;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\QueryException;
@@ -27,7 +28,7 @@ class CarteraController extends Controller
     {
         try
         {
-            $cartera = Cartera::findOrFail($IdCartera);
+            $cartera = Cartera::with('usuario')->findOrFail($IdCartera);
             return response($cartera,200);
         }
         catch(QueryException $e)

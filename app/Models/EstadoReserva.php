@@ -13,7 +13,7 @@ class EstadoReserva extends Model
 
     public function reserva()
     {
-        return $this->hasMany('App\Models\Reserva','IdEstado');        
+        return $this->hasMany('ApiTripEver\Models\Reserva','IdEstado');        
     }
 
 }
