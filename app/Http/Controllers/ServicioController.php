@@ -1,5 +1,4 @@
-
-}}<?php
+<?php
 
 namespace ApiTripEver\Http\Controllers;
 

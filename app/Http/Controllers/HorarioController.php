@@ -15,9 +15,9 @@ class HorarioController extends Controller
         {
             $horario = new Horario();
             $horario->FechaInicio = $request->FechaInicio;
-            $horario->Direccion = $request->Direccion;
-            $horario->Historia = $request->Historia;
-            $horario->Descripcion = $request->Descripcion;
+            $horario->FechaFin = $request->FechaFin;
+            $horario->HoraInicio = $request->HoraInicio;
+            $horario->HoraFin = $request->HoraFin;
             $horario->IdServicio = $request->IdServicio;           
             $horario->save();
             return response(null,201);     
@@ -85,10 +85,10 @@ class HorarioController extends Controller
         {
             $horario = Horario::findOrFail($IdHorario);
             $horario->FechaInicio = $request->FechaInicio;
-            $horario->Direccion = $request->Direccion;
-            $horario->Historia = $request->Historia;
-            $horario->Descripcion = $request->Descripcion;
-            $horario->IdServicio = $request->IdServicio;            
+            $horario->FechaFin = $request->FechaFin;
+            $horario->HoraInicio = $request->HoraInicio;
+            $horario->HoraFin = $request->HoraFin;
+            $horario->IdServicio = $request->IdServicio;           
             $horario->save();
             return response(null,201);     
         }
