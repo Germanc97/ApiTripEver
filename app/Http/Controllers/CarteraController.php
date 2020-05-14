@@ -14,12 +14,12 @@ class CarteraController extends Controller
 
     use CarteraUsuarioTrait;
 
-    public function create(Request $request)
+    public function create(Request $request) #Funcion en el Trait
     {
         $this->createCartera($request->IdUsuario); 
     }
 
-    public function delete($IdUsuario)
+    public function delete($IdUsuario) #Funcion en el Trait
     {
         $this->deleteCartera($IdUsuario); 
     } 

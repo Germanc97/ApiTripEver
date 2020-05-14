@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use ApiTripEver\Models\Usuario;
 use ApiTripEver\Models\Cartera;
 use ApiTripEver\Traits\CarteraUsuarioTrait;
+use ApiTripEver\Traits\UsuarioUsuarioHostTrait;
 use ApiTripEver\Http\Controllers\CarteraController;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\QueryException;
@@ -44,7 +45,7 @@ class UsuarioController extends Controller
     {
         try
         {
-            $this->deleteCarteraUsuario($IdUsuario);
+            $this->deleteCartera($IdUsuario);
             $usuario = Usuario::findOrFail($IdUsuario);
             $usuario->delete();
             return response(null,200);

@@ -4,11 +4,13 @@ namespace ApiTripEver\Http\Controllers;
 
 use Illuminate\Http\Request;
 use ApiTripEver\Models\UsuarioHost;
+use ApiTripEver\Traits\UsuarioUsuarioHostTrait;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\QueryException;
 
 class UsuarioHostController extends Controller
 {
+    use UsuarioUsuarioHostTrait;
     public function create(Request $request)
     {
         try
@@ -18,6 +20,7 @@ class UsuarioHostController extends Controller
             $usuarioHost->Mail = $request->Mail;
             $usuarioHost->IdUsuario = $request->IdUsuario;
             $usuarioHost->save();
+            $this->updateTipo($usuarioHost->IdUsuario,1); 
             return response(null,201);
         }
         catch(QueryException $e)
@@ -28,23 +31,9 @@ class UsuarioHostController extends Controller
          
     }
 
-    public function delete($IdHost)
-    {
-        try
-        {
-            $usuarioHost = UsuarioHost::findOrFail($IdHost);
-            $usuarioHost->delete();
-            return response(null,200);
-        }
-        catch(QueryException $e)
-        {
-            return response($e,400);
-        }
-        catch(ModelNotFoundException $e)
-        {
-            return response($e,404);
-        } 
-        
+    public function delete($IdUsuario)#Recibe el Id del usuario padre
+    {       
+        $this->deleteHost($IdUsuario);
     }
 
     public function getUsuario($IdHost)

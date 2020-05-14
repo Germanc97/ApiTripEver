@@ -47,7 +47,7 @@ Route::get('/getAllHost','UsuarioHostController@allUsuarios');
 
 Route::put('/updateHost/{IdHost?}','UsuarioHostController@update');
 
-Route::delete('/deleteHost/{IdHost?}','UsuarioHostController@delete');
+Route::delete('/deleteHost/{IdUsuario?}','UsuarioHostController@delete');
 
 /***Servicio***/
 
