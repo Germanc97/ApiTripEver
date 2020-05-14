@@ -19,11 +19,9 @@ class CreateTableReserva extends Migration
             $table->foreignId('IdEstado')->references('IdEstado')->on('estadoReserva');
             $table->foreignId('IdUsuario')->references('IdUsuario')->on('usuario')->onDelete('cascade');
             $table->foreignId('IdServicio')->references('IdServicios')->on('servicios')->onDelete('cascade');
-
-            $table->timestamps();
         });
     }
-
+               
     /**
      * Reverse the migrations.
      *

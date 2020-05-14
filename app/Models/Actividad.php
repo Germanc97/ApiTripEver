@@ -9,7 +9,7 @@ class Actividad extends Model
     protected $table = 'actividades';
     protected $primaryKey = 'IdActividad';
     protected $fillable = ['IdActividad','Nombre','Duracion','EdadMinima','Descripcion','Precio'];
-    public $timestamps = true;
+    public $timestamps = false;
 
     public function servicio()
     {

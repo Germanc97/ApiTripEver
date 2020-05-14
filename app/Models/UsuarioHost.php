@@ -9,7 +9,7 @@ class UsuarioHost extends Model
     protected $table = 'usuarioHost';
     protected $primaryKey = 'IdHost';
     protected $fillable = ['IdHost','NoCuenta','Mail','IdUsuario'];
-    public $timestamps = true;
+    public $timestamps = false;
 
     public function usuario()
     {

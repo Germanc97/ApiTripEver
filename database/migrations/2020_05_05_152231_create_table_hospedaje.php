@@ -21,7 +21,6 @@ class CreateTableHospedaje extends Migration
             $table->string('Barrio');
             $table->string('EspecificacionDomicilio');
             $table->foreignId('IdServicio')->references('IdServicios')->on('servicios')->onDelete('cascade');
-            $table->timestamps();
         });
     }
 

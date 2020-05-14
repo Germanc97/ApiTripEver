@@ -16,7 +16,6 @@ class CreateTableTipoServicio extends Migration
         Schema::create('tipoServicio', function (Blueprint $table) {
             $table->bigIncrements('IdTipoServicio');
             $table->string('NombreTipo');
-            $table->timestamps();
         });
     }
 

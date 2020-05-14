@@ -17,7 +17,6 @@ class CreateTableCartera extends Migration
             $table->bigIncrements('IdCartera');
             $table->integer('Monto');
             $table->foreignId('IdUsuario')->references('IdUsuario')->on('usuario')->onDelete('cascade');
-            $table->timestamps();
         });
     }
 

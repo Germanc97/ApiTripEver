@@ -18,7 +18,6 @@ class CreateTableUsuarioHost extends Migration
             $table->integer('NoCuenta');
             $table->string('Mail');
             $table->foreignId('IdUsuario')->references('IdUsuario')->on('usuario')->onDelete('cascade');
-            $table->timestamps();
         });
     }
 

@@ -21,7 +21,6 @@ class CreateTableActividades extends Migration
             $table->string('Descripcion');
             $table->integer('Precio');
             $table->foreignId('IdServicio')->references('IdServicios')->on('servicios')->onDelete('cascade');
-            $table->timestamps();
         });
     }
 

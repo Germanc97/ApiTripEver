@@ -20,7 +20,6 @@ class CreateTableHorario extends Migration
             $table->string('HoraInicio');
             $table->string('HoraFin');
             $table->foreignId('IdServicio')->references('IdServicios')->on('servicios')->onDelete('cascade');
-            $table->timestamps();
         });
     }
 

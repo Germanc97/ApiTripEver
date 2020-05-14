@@ -24,7 +24,6 @@ class CreateTableUsuario extends Migration
             $table->string('Usuario');
             $table->string('Contrasena');
             $table->boolean('Tipo');
-            $table->timestamps();
         });
     }
 

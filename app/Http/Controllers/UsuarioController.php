@@ -37,9 +37,7 @@ class UsuarioController extends Controller
         catch(QueryException $e)
         {
             return response($e,400);
-        }
-
-         
+        }         
     }
 
     public function delete($IdUsuario)

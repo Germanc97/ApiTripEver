@@ -9,7 +9,7 @@ class Lugar extends Model
     protected $table = 'lugar';
     protected $primaryKey = 'IdLugar';
     protected $fillable = ['IdLugar','Nombre','Direccion','Historia','Descripcion','IdActividad'];
-    public $timestamps = true; 
+    public $timestamps = false;
     
     public function actividad()
     {

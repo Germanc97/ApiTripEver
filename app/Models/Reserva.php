@@ -9,7 +9,7 @@ class Reserva extends Model
     protected $table = 'reserva';
     protected $primaryKey = 'IdReserva';
     protected $fillable = ['IdReserva','numPersonas','IdEstado','IdUsuario','IdServicios'];
-    public $timestamps = true;
+    public $timestamps = false;
 
 
     public function estadoReserva()

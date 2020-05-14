@@ -9,7 +9,7 @@ class Servicio extends Model
     protected $table = 'servicios';
     protected $primaryKey = 'IdServicios';
     protected $fillable = ['IdServicios','Titulo','Pais','Cuidad','MaxPersonas','Descripcion','Precio','IdHost','IdTipoServicio'];
-    public $timestamps = true;
+    public $timestamps = false;
 
     public function horario()
     {

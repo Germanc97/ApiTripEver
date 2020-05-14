@@ -9,7 +9,7 @@ class TipoServicio extends Model
     protected $table = 'tipoServicio';
     protected $primaryKey = 'IdTipoServicio';
     protected $fillable = ['IdTipoServicio','NombreTipo'];
-    public $timestamps = true;
+    public $timestamps = false;
 
     public function reserva()
     {

@@ -9,7 +9,7 @@ class TarjetaRegalo extends Model
     protected $table = 'tarjetasRegalo';
     protected $primaryKey = 'IdTarjeta';
     protected $fillable = ['IdTarjeta','Monto'];
-    public $timestamps = true; 
+    public $timestamps = false;
     
     public function Comprador()
     {

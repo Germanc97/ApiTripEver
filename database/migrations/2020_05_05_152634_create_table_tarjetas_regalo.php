@@ -17,8 +17,7 @@ class CreateTableTarjetasRegalo extends Migration
             $table->bigIncrements('IdTarjeta');
             $table->integer('Monto');
             $table->foreignId('Comprador')->references('IdUsuario')->on('usuario')->onDelete('cascade');
-            $table->foreignId('Destinatario')->references('IdUsuario')->on('usuario');
-            $table->timestamps();
+            $table->foreignId('Destinatario')->references('IdUsuario')->on('usuario')->nullable();
         });
     }
 

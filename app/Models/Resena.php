@@ -9,7 +9,7 @@ class Resena extends Model
     protected $table = 'resena';
     protected $primaryKey = 'IdResena';
     protected $fillable = ['IdResena','Descripcion','Fecha','IdUsuario','IdServicio'];
-    public $timestamps = true;
+    public $timestamps = false;
 
     public function usuario()
     {

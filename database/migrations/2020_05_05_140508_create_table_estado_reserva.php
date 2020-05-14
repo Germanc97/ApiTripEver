@@ -16,7 +16,6 @@ class CreateTableEstadoReserva extends Migration
         Schema::create('estadoReserva', function (Blueprint $table) {
             $table->bigIncrements('IdEstado');
             $table->string('Estado');
-            $table->timestamps();
         });
     }
 
