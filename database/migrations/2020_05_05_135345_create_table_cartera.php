@@ -16,7 +16,7 @@ class CreateTableCartera extends Migration
         Schema::create('cartera', function (Blueprint $table) {
             $table->bigIncrements('IdCartera');
             $table->integer('Monto');
-            $table->foreignId('IdUsuario')->references('IdUsuario')->on('usuario')->delete('cascade');
+            $table->foreignId('IdUsuario')->references('IdUsuario')->on('usuario')->onDelete('cascade');
             $table->timestamps();
         });
     }

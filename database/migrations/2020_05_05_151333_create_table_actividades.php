@@ -20,7 +20,7 @@ class CreateTableActividades extends Migration
             $table->integer('EdadMinima');
             $table->string('Descripcion');
             $table->integer('Precio');
-            $table->foreignId('IdServicio')->references('IdServicios')->on('servicios')->delete('cascade');
+            $table->foreignId('IdServicio')->references('IdServicios')->on('servicios')->onDelete('cascade');
             $table->timestamps();
         });
     }

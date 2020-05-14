@@ -22,7 +22,7 @@ class CreateTableServicios extends Migration
             $table->string('Descripcion');
             $table->integer('Precio');
             $table->foreignId('IdHorario')->references('IdHorario')->on('horario');
-            $table->foreignId('IdHost')->references('IdHost')->on('usuarioHost')->delete('cascade');
+            $table->foreignId('IdHost')->references('IdHost')->on('usuarioHost')->onDelete('cascade');
             $table->foreignId('IdTipoServicio')->references('IdTipoServicio')->on('tipoServicio');
             $table->timestamps();
         });
