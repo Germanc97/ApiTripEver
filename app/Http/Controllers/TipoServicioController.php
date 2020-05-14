@@ -64,7 +64,7 @@ class TipoServicioController extends Controller
         
     }
 
-    public function allUsuarios()
+    public function allTipoServicios()
     {
         
         try

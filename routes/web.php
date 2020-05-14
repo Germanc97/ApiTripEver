@@ -127,9 +127,45 @@ Route::post('/createActividad','ActividadController@create');
 
 Route::get('/getActividad/{IdActividad?}','ActividadController@getActividad');
 
-Route::get('/getActividades','ActividadController@allActividades');
+Route::get('/getActividades','<ActividadController@allActivida></ActividadController@allActivida>des');
 
 Route::put('/updateActividad/{IdActividad?}','ActividadController@update');
 
 Route::delete('/deleteActividad/{IdActividad?}','ActividadController@delete');
 
+
+/***EstadoReserva***/
+
+Route::post('/createEstadoReserva','EstadoReservaController@create');
+
+Route::get('/getEstadoReserva/{IdEstado?}','EstadoReservaController@getEstadoReserva');
+
+Route::get('/getEstadoReserva','EstadoReservaController@allEstadoReserva');
+
+Route::put('/updateActividad/{IdEstado?}','ActividadController@update');
+
+Route::delete('/deleteEstadoReserva/{IdEstado?}','EstadoReservaController@delete');
+
+/***Lugar***/
+
+Route::post('/createLugar',' LugarController@create');
+
+Route::delete('/deleteLugar/{IdLugar?}','LugarController@delete');
+
+Route::get('/getLugar/{IdLugar?}','LugarController@getLugar');
+
+Route::get('/getLugar','LugarController@allLugares');
+
+Route::put('/updateLugar/{IdLugar?}','LugarController@update');
+
+/***TipoServicio***/
+
+Route::post('/createTipoServicio',' LugarController@create');
+
+Route::delete('/deleteTipoServicio/{IdTipoServicio?}','LugarController@delete');
+
+Route::get('/getTipoServicio/{IdTipoServicio?}','LugarController@getTipoServicio');
+
+Route::get('/getTipoServicio','TipoServicioController@allTipoServicios');
+
+Route::put('/updateTipoServicio/{IdTipoServicio?}','TipoServicioController@update');
