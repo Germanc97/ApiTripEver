@@ -8,7 +8,7 @@ class Horario extends Model
 {
     protected $table = 'horario';
     protected $primaryKey = 'IdHorario';
-    protected $fillable = ['IdHorario','FechaInicio','Direccion','Historia','Descripcion','IdServicio'];
+    protected $fillable = ['IdHorario','FechaInicio','FechaFin','HoraInicio','HoraFin'];
     public $timestamps = true;
 
     public function servicio()

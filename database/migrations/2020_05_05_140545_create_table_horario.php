@@ -15,10 +15,10 @@ class CreateTableHorario extends Migration
     {
         Schema::create('horario', function (Blueprint $table) {
             $table->bigIncrements('IdHorario');
-            $table->string('FechaInicio');
-            $table->string('Direccion');
-            $table->string('Historia');
-            $table->string('Descripcion');
+            $table->date('FechaInicio');
+            $table->date('FechaFin');
+            $table->string('HoraInicio');
+            $table->string('HoraFin');
             $table->timestamps();
         });
     }
