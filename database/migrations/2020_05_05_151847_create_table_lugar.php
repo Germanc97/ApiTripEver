@@ -19,7 +19,7 @@ class CreateTableLugar extends Migration
             $table->string('Direccion');
             $table->string('Historia');
             $table->string('Descripcion');
-            $table->foreignId('IdActividad')->references('IdActividad')->on('actividades');
+            $table->foreignId('IdActividad')->references('IdActividad')->on('actividades')->delete('cascade');
             $table->timestamps();
         });
     }

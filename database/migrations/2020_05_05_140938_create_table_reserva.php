@@ -17,8 +17,8 @@ class CreateTableReserva extends Migration
             $table->bigIncrements('IdReserva');
             $table->integer('numPersonas');
             $table->foreignId('IdEstado')->references('IdEstado')->on('estadoReserva');
-            $table->foreignId('IdUsuario')->references('IdUsuario')->on('usuario');
-            $table->foreignId('IdServicio')->references('IdServicios')->on('servicios');
+            $table->foreignId('IdUsuario')->references('IdUsuario')->on('usuario')->delete('cascade');
+            $table->foreignId('IdServicio')->references('IdServicios')->on('servicios')->delete('cascade');
 
             $table->timestamps();
         });

@@ -29,7 +29,7 @@ trait UsuarioUsuarioHostTrait {
         }        
     } 
 
-    public function deleteHost($IdUsuario)#Recibe el Id del usuario padre
+    public function deleteHost($IdUsuario) #Recibe el Id del usuario padre
     {
         try
         {
@@ -45,8 +45,7 @@ trait UsuarioUsuarioHostTrait {
         catch(ModelNotFoundException $e)
         {
             return response($e,404);
-        } 
-        
+        }        
     }
     
 }
