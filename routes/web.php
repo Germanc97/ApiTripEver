@@ -142,7 +142,7 @@ Route::get('/getEstadoReserva/{IdEstado?}','EstadoReservaController@getEstadoRes
 
 Route::get('/getEstadoReserva','EstadoReservaController@allEstadoReserva');
 
-Route::put('/updateActividad/{IdEstado?}','ActividadController@update');
+Route::put('/updateEstadoReserva/{IdEstado?}','ActividadController@update');
 
 Route::delete('/deleteEstadoReserva/{IdEstado?}','EstadoReservaController@delete');
 

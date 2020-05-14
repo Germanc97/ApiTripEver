@@ -57,5 +57,21 @@ class VerifyCsrfToken extends Middleware
         "/getActividades",
         "/updateActividad/*",
         "/deleteActividad/*",
+        "/createEstadoReserva",
+        "/getEstadoReserva/*",
+        "/getEstadoReserva",
+        "/updateEstadoReserva/*",
+        "/deleteEstadoReserva/*",
+        "/createLugar",
+        "/deleteLugar/*",
+        "/getLugar/*",
+        "/getLugar",
+        "/updateLugar/*",
+        "/createTipoServicio",
+        "/deleteTipoServicio/*",
+        "/getTipoServicio/*",
+        "/getTipoServicio",
+        "/updateTipoServicio/*"
+
     ];
 }
