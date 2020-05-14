@@ -14,6 +14,7 @@ use Illuminate\Database\QueryException;
 class UsuarioController extends Controller
 {
     use CarteraUsuarioTrait;
+    use UsuarioUsuarioHostTrait;
 
     public function create(Request $request)
     {
@@ -46,6 +47,7 @@ class UsuarioController extends Controller
         try
         {
             $this->deleteCartera($IdUsuario);
+            $this->deleteHost($IdUsuario);
             $usuario = Usuario::findOrFail($IdUsuario);
             $usuario->delete();
             return response(null,200);
