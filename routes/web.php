@@ -160,11 +160,11 @@ Route::put('/updateLugar/{IdLugar?}','LugarController@update');
 
 /***TipoServicio***/
 
-Route::post('/createTipoServicio',' LugarController@create');
+Route::post('/createTipoServicio','TipoServicioController@create');
 
-Route::delete('/deleteTipoServicio/{IdTipoServicio?}','LugarController@delete');
+Route::delete('/deleteTipoServicio/{IdTipoServicio?}','TipoServicioController@delete');
 
-Route::get('/getTipoServicio/{IdTipoServicio?}','LugarController@getTipoServicio');
+Route::get('/getTipoServicio/{IdTipoServicio?}','TipoServicioController@getTipoServicio');
 
 Route::get('/getTipoServicio','TipoServicioController@allTipoServicios');
 

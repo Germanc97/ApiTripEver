@@ -19,7 +19,7 @@ class HospedajeController extends Controller
             $hospedaje->Direccion = $request->Direccion;
             $hospedaje->Barrio = $request->Barrio;           
             $hospedaje->EspecificacionDomicilio = $request->EspecificacionDomicilio;           
-            $hospedaje->IdServicios = $request->IdServicios;
+            $hospedaje->IdServicio = $request->IdServicio;
             $hospedaje->save();
             return response(null,201);     
         }
@@ -90,7 +90,7 @@ class HospedajeController extends Controller
             $hospedaje->Direccion = $request->Direccion;
             $hospedaje->Barrio = $request->Barrio;           
             $hospedaje->EspecificacionDomicilio = $request->EspecificacionDomicilio;           
-            $hospedaje->IdServicio = $request->IdServicios;
+            $hospedaje->IdServicio = $request->IdServicio;
             $hospedaje->save();
             return response(null,201);     
         }

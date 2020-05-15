@@ -10,12 +10,7 @@ class TipoServicio extends Model
     protected $primaryKey = 'IdTipoServicio';
     protected $fillable = ['IdTipoServicio','NombreTipo'];
     public $timestamps = false;
-
-    public function reserva()
-    {
-        return $this->hasMany('ApiTripEver\Models\Servicio','IdTipoServicio');        
-    }
-
+    
     public function servicio()
     {
         return $this->hasMany('ApiTripEver\Models\Servicio','IdTipoServicio');

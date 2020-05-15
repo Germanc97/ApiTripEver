@@ -16,15 +16,13 @@ class TipoServicioController extends Controller
             $tipoServicio = new TipoServicio();
             $tipoServicio->IdTipoServicio = $request->IdTipoServicio;
             $tipoServicio->NombreTipo = $request->NombreTipo;
-            $usuario->save();
+            $tipoServicio->save();
             return response(null,201);
         }
         catch(QueryException $e)
         {
             return response($e,400);
-        }
-
-         
+        }         
     }
 
     public function delete($IdTipoServicio)
@@ -85,7 +83,7 @@ class TipoServicioController extends Controller
             $tipoServicio = TipoServicio::findOrFail($IdTipoServicio);
             $tipoServicio->IdTipoServicio = $request->IdTipoServicio;
             $tipoServicio->NombreTipo = $request->NombreTipo;
-            $usuario->save(); 
+            $tipoServicio->save(); 
             return response(null,201);
         }
         catch(QueryException $e)
