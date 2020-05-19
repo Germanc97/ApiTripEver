@@ -31,8 +31,8 @@ class UsuarioController extends Controller
             $usuario->Contrasena = $request->Contrasena;
             $usuario->Tipo = $request->Tipo;
             $usuario->save();
-            $this->createCartera($usuario->IdUsuario);            
-            return response(null,201);
+            $response = $this->createCartera($usuario->IdUsuario);            
+            return $response;
         }
         catch(QueryException $e)
         {

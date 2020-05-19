@@ -7,13 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Servicio extends Model
 {
     protected $table = 'servicios';
-    protected $primaryKey = 'IdServicios';
-    protected $fillable = ['IdServicios','Titulo','Pais','Cuidad','MaxPersonas','Descripcion','Precio','IdHost','IdTipoServicio'];
+    protected $primaryKey = 'IdServicio';
+    protected $fillable = ['IdServicio','Titulo','Pais','Cuidad','MaxPersonas','Descripcion','Precio','IdHost','IdTipoServicio'];
     public $timestamps = false;
 
     public function horario()
     {
-        return $this->belongsTo('ApiTripEver\Models\Horario','IdServicios');
+        return $this->belongsTo('ApiTripEver\Models\Horario','IdServicio');
     }
 
     public function usuarioHost()
@@ -28,12 +28,12 @@ class Servicio extends Model
 
     public function reserva()
     {
-        return $this->hasMany('App\Models\Reserva','IdServicios');
+        return $this->hasMany('App\Models\Reserva','IdServicio');
     }
 
     public function hospedaje()
     {
-        return $this->belongsTo('App\Models\Hospedaje','IdServicios');
+        return $this->belongsTo('App\Models\Hospedaje','IdServicio');
     }
 
     public function resena()
@@ -45,8 +45,5 @@ class Servicio extends Model
     {
         return $this->hasMany('App\Models\Actividad','IdServicios');
     }
-
-
-
 
 }

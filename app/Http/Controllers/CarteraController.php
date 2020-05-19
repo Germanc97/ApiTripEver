@@ -16,12 +16,14 @@ class CarteraController extends Controller
 
     public function create(Request $request) #Funcion en el Trait
     {
-        $this->createCartera($request->IdUsuario); 
+        $response = $this->createCartera($usuario->IdUsuario);            
+        return $response;
     }
 
     public function delete($IdUsuario) #Funcion en el Trait
     {
-        $this->deleteCartera($IdUsuario); 
+        $response = $this->deleteCartera($IdUsuario);
+        return $response;
     } 
     
     public function getCartera($IdCartera)

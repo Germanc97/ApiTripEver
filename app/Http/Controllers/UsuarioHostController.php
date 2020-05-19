@@ -11,6 +11,7 @@ use Illuminate\Database\QueryException;
 class UsuarioHostController extends Controller
 {
     use UsuarioUsuarioHostTrait;
+   
     public function create(Request $request)
     {
         try
@@ -27,8 +28,7 @@ class UsuarioHostController extends Controller
         {
             return response($e,400);
         }
-
-         
+        
     }
 
     public function delete($IdUsuario)#Recibe el Id del usuario padre
