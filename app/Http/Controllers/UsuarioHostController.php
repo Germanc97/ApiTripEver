@@ -21,19 +21,19 @@ class UsuarioHostController extends Controller
             $usuarioHost->Mail = $request->Mail;
             $usuarioHost->IdUsuario = $request->IdUsuario;
             $usuarioHost->save();
-            $this->updateTipo($usuarioHost->IdUsuario,1); 
-            return response(null,201);
+            $response = $this->updateTipo($usuarioHost->IdUsuario,1); 
+            return $response;
         }
         catch(QueryException $e)
         {
             return response($e,400);
-        }
-        
+        }        
     }
 
     public function delete($IdUsuario)#Recibe el Id del usuario padre
     {       
-        $this->deleteHost($IdUsuario);
+        $response = $this->deleteHost($IdUsuario);
+        return $response;
     }
 
     public function getUsuario($IdHost)

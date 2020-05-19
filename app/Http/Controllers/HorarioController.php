@@ -43,8 +43,7 @@ class HorarioController extends Controller
         catch(ModelNotFoundException $e)
         {
             return response($e,404);
-        } 
-        
+        }         
     }
 
     public function getHorario($IdHorario)

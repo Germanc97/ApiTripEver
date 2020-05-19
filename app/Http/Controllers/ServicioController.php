@@ -51,8 +51,7 @@ class ServicioController extends Controller
         catch(ModelNotFoundException $e)
         {
             return response($e,404);
-        } 
-        
+        }         
     }
 
     public function getServicio($IdServicios)
@@ -69,8 +68,7 @@ class ServicioController extends Controller
         catch(ModelNotFoundException $e)
         {
             return response(null,404);
-        } 
-        
+        }         
     }
 
     public function allServicios()

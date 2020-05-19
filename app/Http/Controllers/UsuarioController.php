@@ -55,8 +55,7 @@ class UsuarioController extends Controller
         catch(ModelNotFoundException $e)
         {
             return response($e,404);
-        } 
-        
+        }        
     }
 
     public function getUsuario($IdUsuario)
@@ -73,13 +72,11 @@ class UsuarioController extends Controller
         catch(ModelNotFoundException $e)
         {
             return response(null,404);
-        } 
-        
+        }         
     }
 
     public function allUsuarios()
-    {
-        
+    {        
         try
         {
             $usuario = Usuario::all();
@@ -106,7 +103,6 @@ class UsuarioController extends Controller
             $usuario->Tipo = $request->Tipo;
             $usuario->save(); 
             return response(null,201);
-
         }
         catch(QueryException $e)
         {

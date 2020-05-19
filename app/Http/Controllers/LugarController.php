@@ -25,9 +25,7 @@ class LugarController extends Controller
         catch(QueryException $e)
         {
             return response($e,400);
-        }
-
-         
+        }         
     }
 
     public function delete($IdLugar)
@@ -45,8 +43,7 @@ class LugarController extends Controller
         catch(ModelNotFoundException $e)
         {
             return response($e,404);
-        } 
-        
+        }         
     }
 
     public function getLugar($IdLugar)
@@ -63,8 +60,7 @@ class LugarController extends Controller
         catch(ModelNotFoundException $e)
         {
             return response(null,404);
-        } 
-        
+        }         
     }
 
     public function allLugares()

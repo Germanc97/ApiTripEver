@@ -35,8 +35,8 @@ trait UsuarioUsuarioHostTrait {
         {
             $usuarioHost = UsuarioHost::where("IdUsuario",$IdUsuario);
             $usuarioHost->delete();
-            $this->updateTipo($IdUsuario,0);
-            return response(null,200);
+            $response = $this->updateTipo($IdUsuario,0);
+            return $response;
         }
         catch(QueryException $e)
         {
