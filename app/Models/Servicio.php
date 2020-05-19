@@ -38,12 +38,12 @@ class Servicio extends Model
 
     public function resena()
     {
-        return $this->hasMany('App\Models\Resena','IdServicios');
+        return $this->hasMany('App\Models\Resena','IdServicio');
     }
 
     public function Actividad()
     {
-        return $this->hasMany('App\Models\Actividad','IdServicios');
+        return $this->hasMany('App\Models\Actividad','IdServicio');
     }
 
 }

@@ -8,7 +8,7 @@ class Reserva extends Model
 {
     protected $table = 'reserva';
     protected $primaryKey = 'IdReserva';
-    protected $fillable = ['IdReserva','numPersonas','IdEstado','IdUsuario','IdServicios'];
+    protected $fillable = ['IdReserva','numPersonas','IdEstado','IdUsuario','IdServicio'];
     public $timestamps = false;
 
 
@@ -24,7 +24,7 @@ class Reserva extends Model
 
     public function servicio()
     {
-        return $this->belongsTo('App\Models\Servicio','IdServicios');
+        return $this->belongsTo('App\Models\Servicio','IdServicio');
     }
 
 }
