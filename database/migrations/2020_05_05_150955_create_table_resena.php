@@ -18,7 +18,7 @@ class CreateTableResena extends Migration
             $table->string('Descripcion');
             $table->date('Fecha');
             $table->foreignId('IdUsuario')->references('IdUsuario')->on('usuario');
-            $table->foreignId('IdServicio')->references('IdServicios')->on('servicios')->onDelete('cascade');
+            $table->foreignId('IdServicio')->references('IdServicio')->on('servicios')->onDelete('cascade');
         });
     }
 

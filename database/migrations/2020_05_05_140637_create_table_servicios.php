@@ -14,7 +14,7 @@ class CreateTableServicios extends Migration
     public function up()
     {
         Schema::create('servicios', function (Blueprint $table) {
-            $table->bigIncrements('IdServicios');
+            $table->bigIncrements('IdServicio');
             $table->string('Titulo');
             $table->string('Pais');
             $table->string('Cuidad');
