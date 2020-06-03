@@ -33,6 +33,8 @@ Route::get('/getUsuario/{IdUsuario?}','UsuarioController@getUsuario');
 
 Route::get('/getUsuarioName/{NameUsuario?}','UsuarioController@getUsuarioName');
 
+Route::get('/getUsuarioByUserContra/{NameUsuario?}/{ContraUsuario?}','UsuarioController@getUsuarioByUserContra');
+
 Route::get('/getUsuarios','UsuarioController@allUsuarios');
 
 Route::put('/updateUsuario/{IdUsuario?}','UsuarioController@update');

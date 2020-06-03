@@ -91,6 +91,23 @@ class UsuarioController extends Controller
         }         
     }
 
+    public function getUsuarioByUserContra($NameUsuario, $ContraUsuario)
+    {
+        try
+        {
+            $usuario = Usuario::where([['Usuario','=',$NameUsuario], ['Contrasena','=', $ContraUsuario] ])->get();
+            return response($usuario,200);
+        }
+        catch(QueryException $e)
+        {
+            return response($e,400);
+        }
+        catch(ModelNotFoundException $e)
+        {
+            return response(null,404);
+        }         
+    }
+
     public function allUsuarios()
     {        
         try
