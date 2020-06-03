@@ -74,6 +74,22 @@ class UsuarioController extends Controller
             return response(null,404);
         }         
     }
+    public function getUsuarioName($NameUsuario)
+    {
+        try
+        {
+            $usuario = Usuario::findOrFail($NameUsuario);
+            return response($usuario,200);
+        }
+        catch(QueryException $e)
+        {
+            return response($e,400);
+        }
+        catch(ModelNotFoundException $e)
+        {
+            return response(null,404);
+        }         
+    }
 
     public function allUsuarios()
     {        

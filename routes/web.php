@@ -31,6 +31,8 @@ Route::post('/createUsuario','UsuarioController@create');
 
 Route::get('/getUsuario/{IdUsuario?}','UsuarioController@getUsuario');
 
+Route::get('/getUsuarioName/{NameUsuario?}','UsuarioController@getUsuarioName');
+
 Route::get('/getUsuarios','UsuarioController@allUsuarios');
 
 Route::put('/updateUsuario/{IdUsuario?}','UsuarioController@update');
@@ -169,3 +171,5 @@ Route::get('/getTipoServicio/{IdTipoServicio?}','TipoServicioController@getTipoS
 Route::get('/getTipoServicio','TipoServicioController@allTipoServicios');
 
 Route::put('/updateTipoServicio/{IdTipoServicio?}','TipoServicioController@update');
+
+
