@@ -78,7 +78,7 @@ class UsuarioController extends Controller
     {
         try
         {
-            $usuario = Usuario::findOrFail($NameUsuario);
+            $usuario= Usuario::where("Nombre",$NameUsuario);
             return response($usuario,200);
         }
         catch(QueryException $e)
