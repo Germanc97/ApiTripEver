@@ -78,7 +78,7 @@ class UsuarioController extends Controller
     {
         try
         {
-            $usuario= Usuario::where("Nombre",$NameUsuario);
+            $usuario = Usuario::where('Nombre','=',$NameUsuario)->get();
             return response($usuario,200);
         }
         catch(QueryException $e)
