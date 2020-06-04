@@ -95,7 +95,9 @@ class UsuarioController extends Controller
     {
         try
         {
-            $usuario = Usuario::where([['Usuario','=',$NameUsuario], ['Contrasena','=', $ContraUsuario] ])->get();
+            $usuario = Usuario::join('cartera','usuario.IdUsuario','=','cartera.IdUsuario')
+            ->where('Usuario','=',$NameUsuario)->where('Contrasena','=', $ContraUsuario)
+            ->select('usuario.*', 'cartera.*')->first();
             return response($usuario,200);
         }
         catch(QueryException $e)
