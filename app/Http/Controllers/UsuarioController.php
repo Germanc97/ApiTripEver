@@ -98,7 +98,13 @@ class UsuarioController extends Controller
             $usuario = Usuario::join('cartera','usuario.IdUsuario','=','cartera.IdUsuario')
             ->where('Usuario','=',$NameUsuario)->where('Contrasena','=', $ContraUsuario)
             ->select('usuario.*', 'cartera.*')->first();
-            return response($usuario,200);
+            if ($usuario != null) {
+                return response($usuario,200);
+            }
+            else{
+                return response(null,404);
+            }
+            
         }
         catch(QueryException $e)
         {
