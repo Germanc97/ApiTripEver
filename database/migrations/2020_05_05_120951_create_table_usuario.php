@@ -20,7 +20,7 @@ class CreateTableUsuario extends Migration
             $table->string('Telefono');
             $table->date('FechaNacimiento');
             $table->string('TipoIdentificacion');
-            $table->integer('NoIdentificacion');
+            $table->string('NoIdentificacion');
             $table->string('Usuario');
             $table->string('Contrasena');
             $table->boolean('Tipo');
