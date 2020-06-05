@@ -45,7 +45,7 @@ Route::delete('/deleteUsuario/{IdUsuario?}','UsuarioController@delete');
 
 Route::post('/createHost','UsuarioHostController@create');
 
-Route::get('/getHost/{IdHost?}','UsuarioHostController@getUsuario');
+Route::get('/getHost/{IdUsuario?}','UsuarioHostController@getUsuario');
 
 Route::get('/getAllHost','UsuarioHostController@allUsuarios');
 
