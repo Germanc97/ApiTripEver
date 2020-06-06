@@ -18,7 +18,7 @@ class UsuarioHostController extends Controller
         {
             $usuarioHost = new UsuarioHost();
             $usuarioHost->NoCuenta = $request->NoCuenta;
-            $usuarioHost->Mail = $request->Mail;
+            $usuarioHost->MailHost = $request->MailHost;
             $usuarioHost->IdUsuario = $request->IdUsuario;
             $usuarioHost->save();
             $response = $this->updateTipo($usuarioHost->IdUsuario,1); 
