@@ -7,12 +7,15 @@ use ApiTripEver\Models\Servicio;
 use ApiTripEver\Models\Horario;
 use ApiTripEver\Models\Hospedaje;
 use ApiTripEver\Models\TipoServicio;
+use ApiTripEver\Traits\ServicioHorarioTrait;
 use ApiTripEver\Models\Actividad;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\QueryException;
 
 class ServicioController extends Controller
 {
+    use ServicioHorarioTrait;
+
     public function create(Request $request)
     {
         try
@@ -20,14 +23,15 @@ class ServicioController extends Controller
             $servicio = new Servicio();
             $servicio->Titulo = $request->Titulo;
             $servicio->Pais = $request->Pais;
-            $servicio->Cuidad = $request->Cuidad;
+            $servicio->Ciudad = $request->Ciudad;
             $servicio->MaxPersonas = $request->MaxPersonas;
             $servicio->Descripcion = $request->Descripcion;
             $servicio->Precio = $request->Precio;
             $servicio->IdHost = $request->IdHost;
             $servicio->IdTipoServicio = $request->IdTipoServicio;
             $servicio->save();
-            return response(null,201);
+            $response = $this->CreateHorario($request);
+            return response($response,201);
         }
         catch(QueryException $e)
         {
