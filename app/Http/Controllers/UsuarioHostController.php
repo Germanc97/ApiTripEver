@@ -20,8 +20,15 @@ class UsuarioHostController extends Controller
             $usuarioHost->NoCuenta = $request->NoCuenta;
             $usuarioHost->Mail = $request->Mail;
             $usuarioHost->IdUsuario = $request->IdUsuario;
-            $usuarioHost->save();
-            $response = $this->updateTipo($usuarioHost->IdUsuario,1); 
+            if (UsuarioHost::select('usuarioHost.IdUsuario')
+            ->where('IdUsuario','=', $usuarioHost->IdUsuario)->first() == null){
+                $usuarioHost->save();
+                $response = $this->updateTipo($usuarioHost->IdUsuario,1); 
+            }
+            else{
+                $response = response(null,404);
+            }
+            
             return $response;
         }
         catch(QueryException $e)
