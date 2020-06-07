@@ -16,7 +16,7 @@ class CreateTableUsuarioHost extends Migration
         Schema::create('usuarioHost', function (Blueprint $table) {
             $table->bigIncrements('IdHost');
             $table->integer('NoCuenta');
-            $table->string('Mail');
+            $table->string('MailHost');
             $table->foreignId('IdUsuario')->references('IdUsuario')->on('usuario')->onDelete('cascade');
         });
     }

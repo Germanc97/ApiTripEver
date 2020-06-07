@@ -5,27 +5,17 @@ namespace ApiTripEver\Http\Controllers;
 use Illuminate\Http\Request;
 use ApiTripEver\Models\Horario;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use ApiTripEver\Traits\ServicioHorarioTrait;
 use Illuminate\Database\QueryException;
 
 class HorarioController extends Controller
 {
+    use ServicioHorarioTrait;
+    
     public function create(Request $request)
     {
-        try
-        {
-            $horario = new Horario();
-            $horario->FechaInicio = $request->FechaInicio;
-            $horario->FechaFin = $request->FechaFin;
-            $horario->HoraInicio = $request->HoraInicio;
-            $horario->HoraFin = $request->HoraFin;
-            $horario->IdServicio = $request->IdServicio;           
-            $horario->save();
-            return response(null,201);     
-        }
-        catch(QueryException $e)
-        {
-            return response($e,400);
-        }        
+        $response = $this->CreateHorario($request);
+        return $response;
     }
 
     public function delete($IdHorario)

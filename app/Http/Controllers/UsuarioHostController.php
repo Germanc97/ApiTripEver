@@ -18,7 +18,7 @@ class UsuarioHostController extends Controller
         {
             $usuarioHost = new UsuarioHost();
             $usuarioHost->NoCuenta = $request->NoCuenta;
-            $usuarioHost->Mail = $request->Mail;
+            $usuarioHost->MailHost = $request->MailHost;
             $usuarioHost->IdUsuario = $request->IdUsuario;
             if (UsuarioHost::select('usuarioHost.IdUsuario')
             ->where('IdUsuario','=', $usuarioHost->IdUsuario)->first() == null){
@@ -43,11 +43,11 @@ class UsuarioHostController extends Controller
         return $response;
     }
 
-    public function getUsuario($IdHost)
+    public function getUsuario($IdUsuario)
     {
         try
         {
-            $usuarioHost = UsuarioHost::findOrFail($IdHost);
+            $usuarioHost = UsuarioHost::where('IdUsuario','=',$IdUsuario)->first();
             return response($usuarioHost,200);
         }
         catch(QueryException $e)
