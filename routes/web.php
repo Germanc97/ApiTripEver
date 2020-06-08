@@ -59,9 +59,9 @@ Route::post('/createServicio','ServicioController@create');
 
 Route::get('/getServicio/{IdServicios?}','ServicioController@getServicio');
 
-Route::get('/getServiciosExperiencias','ServicioController@allServiciosExperiencias');
+Route::get('/getServiciosId/{IdServicio?}','ServicioController@allServiciosId');
 
-Route::get('/getServiciosHospedajes','ServicioController@allServiciosHospedajes');
+Route::get('/getServiciosIdHost/{IdServicio?}/{IdHost?}','ServicioController@allServiciosIdHost');
 
 Route::get('/getServicios','ServicioController@allServicios');
 

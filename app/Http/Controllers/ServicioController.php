@@ -89,13 +89,13 @@ class ServicioController extends Controller
         }
     }
 
-    public function allServiciosExperiencias()
+    public function allServiciosId($IdServicio)
     {
         
         try
         {
             $servicio = Servicio::select('servicios.*')
-            ->where('IdTipoServicio','=',2)->get();
+            ->where('IdTipoServicio','=',$IdServicio)->get();
             return response($servicio,200);
         }
         catch(QueryException $e)
@@ -104,13 +104,12 @@ class ServicioController extends Controller
         }
     }
 
-    public function allServiciosHospedajes()
-    {
-        
+    public function allServiciosIdHost($IdServicio,$IdHost)
+    {      
         try
         {
             $servicio = Servicio::select('servicios.*')
-            ->where('IdTipoServicio','=',1)->get();
+            ->where('IdTipoServicio','=',$IdServicio)->where('IdHost','=',$IdHost)->get();
             return response($servicio,200);
         }
         catch(QueryException $e)
