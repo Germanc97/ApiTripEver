@@ -21,6 +21,7 @@ class UsuarioController extends Controller
         try
         {
             $usuario = new Usuario();
+            $usuario2 = new Usuario();
             $usuario->Nombre = $request->Nombre;
             $usuario->Mail = $request->Mail;
             $usuario->Telefono = $request->Telefono;
@@ -30,7 +31,14 @@ class UsuarioController extends Controller
             $usuario->Usuario = $request->Usuario;
             $usuario->Contrasena = $request->Contrasena;
             $usuario->Tipo = $request->Tipo;
-            $usuario->save();
+            $usuario2 = Usuario::select('usuario.*')->where('Usuario','=',$usuario->Usuario)->first();
+            if ($usuario2 == null) {
+                $usuario->save();
+                return response($usuario,200);
+            }
+            else{
+                return response(null,404);
+            }
             $response = $this->createCartera($usuario->IdUsuario);            
             return $response;
         }
