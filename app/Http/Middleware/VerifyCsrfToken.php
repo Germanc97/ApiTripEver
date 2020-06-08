@@ -73,7 +73,9 @@ class VerifyCsrfToken extends Middleware
         "/getTipoServicio",
         "/updateTipoServicio/*",
         "/getUsuarioName/*",
-        "/getUsuarioByUserContra/*"
+        "/getUsuarioByUserContra/*",
+        "/getServiciosExperiencias",
+        "/getServiciosHospedajes"
 
     ];
 }

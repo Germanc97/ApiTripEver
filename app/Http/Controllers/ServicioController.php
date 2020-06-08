@@ -89,6 +89,36 @@ class ServicioController extends Controller
         }
     }
 
+    public function allServiciosExperiencias()
+    {
+        
+        try
+        {
+            $servicio = Servicio::select('servicios.*')
+            ->where('IdTipoServicio','=',2)->get();
+            return response($servicio,200);
+        }
+        catch(QueryException $e)
+        {
+            return response($e,400);
+        }
+    }
+
+    public function allServiciosHospedajes()
+    {
+        
+        try
+        {
+            $servicio = Servicio::select('servicios.*')
+            ->where('IdTipoServicio','=',1)->get();
+            return response($servicio,200);
+        }
+        catch(QueryException $e)
+        {
+            return response($e,400);
+        }
+    }
+
     public function update(Request $request, $IdServicios )
     {
         try 
