@@ -19,7 +19,7 @@ class CreateTableHorario extends Migration
             $table->date('FechaFin');
             $table->string('HoraInicio');
             $table->string('HoraFin');
-            $table->foreignId('IdHost')->references('IdHost')->on('servicios')->onDelete('cascade');
+            $table->foreignId('IdUsuario')->references('IdUsuario')->on('servicios')->onDelete('cascade');
         });
     }
 

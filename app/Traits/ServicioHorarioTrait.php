@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 trait ServicioHorarioTrait {
 
-    public function CreateHorario(Request $request)
+    public function CreateHorario(Request $request,$IdServicio)
     {
         try
         {
@@ -18,7 +18,7 @@ trait ServicioHorarioTrait {
             $horario->FechaFin = $request->FechaFin;
             $horario->HoraInicio = $request->HoraInicio;
             $horario->HoraFin = $request->HoraFin;
-            $horario->IdHost = $request->IdHost;           
+            $horario->IdServicio = $IdServicio;           
             $horario->save();
             return response(null,201);     
         }

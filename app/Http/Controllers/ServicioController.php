@@ -30,7 +30,7 @@ class ServicioController extends Controller
             $servicio->IdHost = $request->IdHost;
             $servicio->IdTipoServicio = $request->IdTipoServicio;
             $servicio->save();
-            $response = $this->CreateHorario($request);
+            $response = $this->CreateHorario($request,$servicio->IdServicio);
             return response($response,201);
         }
         catch(QueryException $e)

@@ -12,9 +12,9 @@ class HorarioController extends Controller
 {
     use ServicioHorarioTrait;
     
-    public function create(Request $request)
+    public function create(Request $request, $IdServicio)
     {
-        $response = $this->CreateHorario($request);
+        $response = $this->CreateHorario($request, $IdServicio);
         return $response;
     }
 
