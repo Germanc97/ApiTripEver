@@ -34,12 +34,13 @@ class UsuarioController extends Controller
             $usuario2 = Usuario::select('usuario.*')->where('Usuario','=',$usuario->Usuario)->first();
             if ($usuario2 == null) {
                 $usuario->save();
-                return response($usuario,200);
+                $response = response($usuario,200);
+                $response = $this->createCartera($usuario->IdUsuario);    
             }
             else{
                 return response(null,404);
             }
-            $response = $this->createCartera($usuario->IdUsuario);            
+                    
             return $response;
         }
         catch(QueryException $e)
@@ -86,7 +87,7 @@ class UsuarioController extends Controller
     {
         try
         {
-            $usuario = Usuario::where('Nombre','=',$NameUsuario)->get();
+            $usuario = Usuario::where('Nombre','=',$NameUsuario)->first();
             return response($usuario,200);
         }
         catch(QueryException $e)
