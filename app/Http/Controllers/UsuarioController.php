@@ -86,7 +86,7 @@ class UsuarioController extends Controller
     {
         try
         {
-            $usuario = Usuario::where('Nombre','=',$NameUsuario)->get();
+            $usuario = Usuario::where('Nombre','=',$NameUsuario)->first();
             return response($usuario,200);
         }
         catch(QueryException $e)
@@ -105,7 +105,7 @@ class UsuarioController extends Controller
         {
             $usuario = Usuario::join('cartera','usuario.IdUsuario','=','cartera.IdUsuario')
             ->where('Usuario','=',$NameUsuario)->where('Contrasena','=', $ContraUsuario)
-            ->select('usuario.*', 'cartera.*')->first();
+            ->select('usuario.*', 'cartera.*')->get();
             if ($usuario != null) {
                 return response($usuario,200);
             }
