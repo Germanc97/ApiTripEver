@@ -169,8 +169,8 @@ class UsuarioController extends Controller
         try 
         {
             $usuario = Usuario::findOrFail($IdUsuario);
-            $usuario->Nombre = $request->Nombre;
             $usuario->Mail = $request->Mail;
+            $usuario->Telefono = $request->Telefono;
             $usuario->Contrasena = $request->Contrasena;
             $usuario->save(); 
             return response(null,201);
