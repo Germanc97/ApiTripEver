@@ -62,7 +62,7 @@ class CarteraController extends Controller
     {
         try 
         {
-            $cartera = Usuario::findOrFail($IdCartera);
+            $cartera = Cartera::findOrFail($IdCartera);
             $cartera->Monto = $request->Monto;
             $cartera->IdUsuario = $request->IdUsuario;
             $cartera->save(); 
