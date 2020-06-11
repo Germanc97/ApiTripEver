@@ -163,4 +163,25 @@ class UsuarioController extends Controller
             return response($e,404);
         }        
     }
+
+    public function updateUser(Request $request, $IdUsuario)
+    {
+        try 
+        {
+            $usuario = Usuario::findOrFail($IdUsuario);
+            $usuario->Nombre = $request->Nombre;
+            $usuario->Mail = $request->Mail;
+            $usuario->Contrasena = $request->Contrasena;
+            $usuario->save(); 
+            return response(null,201);
+        }
+        catch(QueryException $e)
+        {
+            return response($e,400);
+        }
+        catch(ModelNotFoundException $e)
+        {
+            return response($e,404);
+        }        
+    }
 }

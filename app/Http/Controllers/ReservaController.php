@@ -20,6 +20,8 @@ class ReservaController extends Controller
             $reserva->IdServicio = $request->IdServicio;
             $reserva->fechaInicio = $request->fechaInicio;
             $reserva->fechaFin = $request->fechaFin;
+            $reserva->valor = $request->valor;
+            $reserva->numNoches = $request->numNoches;
             $reserva->save();
             return response(null,201);
         }
@@ -91,6 +93,7 @@ class ReservaController extends Controller
             $reserva->IdServicio = $request->IdServicio;
             $reserva->fechaInicio = $request->fechaInicio;
             $reserva->fechaFin = $request->fechaFin;
+            $reserva->valor = $request->valor;
             $reserva->save(); 
             return response(null,201);
         }

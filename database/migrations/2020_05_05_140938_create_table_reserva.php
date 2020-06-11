@@ -19,6 +19,9 @@ class CreateTableReserva extends Migration
             $table->foreignId('IdEstado')->references('IdEstado')->on('estadoReserva');
             $table->foreignId('IdUsuario')->references('IdUsuario')->on('usuario')->onDelete('cascade');
             $table->foreignId('IdServicio')->references('IdServicio')->on('servicios')->onDelete('cascade');
+            $table->string('fechaInicio');
+            $table->string('fechaFin');
+            $table->integer('valor');
         });
     }
                

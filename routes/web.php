@@ -39,6 +39,8 @@ Route::get('/getUsuarios','UsuarioController@allUsuarios');
 
 Route::put('/updateUsuario/{IdUsuario?}','UsuarioController@update');
 
+Route::put('/updateUser/{IdUsuario?}','UsuarioController@updateUser');
+
 Route::delete('/deleteUsuario/{IdUsuario?}','UsuarioController@delete');
 
 /***UsuarioHost***/
@@ -177,5 +179,7 @@ Route::get('/getTipoServicio/{IdTipoServicio?}','TipoServicioController@getTipoS
 Route::get('/getTipoServicio','TipoServicioController@allTipoServicios');
 
 Route::put('/updateTipoServicio/{IdTipoServicio?}','TipoServicioController@update');
+
+
 
 
