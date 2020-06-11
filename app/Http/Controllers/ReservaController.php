@@ -22,6 +22,7 @@ class ReservaController extends Controller
             $reserva->fechaFin = $request->fechaFin;
             $reserva->valor = $request->valor;
             $reserva->numNoches = $request->numNoches;
+            $reserva->titulo = $request->titulo;
             $reserva->save();
             return response(null,201);
         }
