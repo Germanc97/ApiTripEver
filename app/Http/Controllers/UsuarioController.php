@@ -172,6 +172,7 @@ class UsuarioController extends Controller
             $usuario->Mail = $request->Mail;
             $usuario->Telefono = $request->Telefono;
             $usuario->Contrasena = $request->Contrasena;
+            $usuario->Tipo = $request->Tipo;
             $usuario->save(); 
             return response(null,201);
         }

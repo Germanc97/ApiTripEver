@@ -127,7 +127,7 @@ Route::get('/getCartera/{IdCartera?}','CarteraController@getCartera');
 
 Route::get('/getCarteras','CarteraController@allCarteras');
 
-Route::put('/updateCartera/{IdCartera?}','HorarioController@update');
+Route::put('/updateCartera/{IdCartera?}','CarteraController@update');
 
 Route::delete('/deleteCartera/{IdUsuario?}','CarteraController@delete');
 
