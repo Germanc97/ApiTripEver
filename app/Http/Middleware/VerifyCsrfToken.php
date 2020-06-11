@@ -31,6 +31,8 @@ class VerifyCsrfToken extends Middleware
         "/getReserva/*",
         "/getReservas",
         "/getReservaUser/*",
+        "/getReservaHost/*",
+        "/getReservaEstado/*",
         "/updateReserva/*",
         "/deleteReserva/*",
         "/createResena",

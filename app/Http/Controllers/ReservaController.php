@@ -88,6 +88,49 @@ class ReservaController extends Controller
         
     } 
 
+    public function getReservaHost($IdHost)
+    {
+        try
+        {
+            $reserva = Reserva::join('servicios','reserva.IdServicio','=','servicios.IdServicio')
+            ->join('usuarioHost','servicios.IdHost','=','usuarioHost.IdHost')
+            ->select('reserva.IdReserva', 'reserva.numPersonas' ,'reserva.fechaInicio',
+             'reserva.fechaFin', 'reserva.valor', 'reserva.numNoches', 'reserva.titulo')
+             ->where('usuarioHost.IdHost','=',$IdHost)->get();
+            return response($reserva,200);
+        }
+        catch(QueryException $e)
+        {
+            return response($e,400);
+        }
+        catch(ModelNotFoundException $e)
+        {
+            return response(null,404);
+        } 
+        
+    } 
+
+    public function getReservaEstado($IdReserva)
+    {
+        try
+        {
+            $reserva = Reserva::join('servicios','reserva.IdServicio','=','servicios.IdServicio')
+            ->join('estadoReserva','reserva.IdEstado','=','estadoReserva.IdEstado')
+            ->select('estadoReserva.Estado')
+            ->where('reserva.IdReserva','=',$IdReserva) ->first();
+            return response($reserva,200);
+        }
+        catch(QueryException $e)
+        {
+            return response($e,400);
+        }
+        catch(ModelNotFoundException $e)
+        {
+            return response(null,404);
+        } 
+        
+    }
+
     public function allReservas()
     {
         
