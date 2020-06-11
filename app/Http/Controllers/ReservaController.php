@@ -72,7 +72,8 @@ class ReservaController extends Controller
     {
         try
         {
-            $reserva = Reserva::select('reserva.*')->where('IdUsuario','=',$IdUsuario)->first();
+            $reserva = Reserva::select('reserva.IdReserva', 'reserva.numPersonas','reserva.IdEstado' ,'reserva.fechaInicio',
+             'reserva.fechaFin', 'reserva.valor', 'reserva.numNoches', 'reserva.titulo')->where('IdUsuario','=',$IdUsuario)->first();
             return response($reserva,200);
         }
         catch(QueryException $e)
