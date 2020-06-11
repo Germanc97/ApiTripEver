@@ -77,6 +77,8 @@ Route::post('/createReserva','ReservaController@create');
 
 Route::get('/getReserva/{IdReserva?}','ReservaController@getReserva');
 
+Route::get('/getReservaUser/{IdUsuario?}','ReservaController@getReservaUser');
+
 Route::get('/getReservas','ReservaController@allReservas');
 
 Route::put('/updateReserva/{IdReserva?}','ReservaController@update');

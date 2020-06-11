@@ -68,6 +68,24 @@ class ReservaController extends Controller
         
     } 
 
+    public function getReservaUser($IdUsuario)
+    {
+        try
+        {
+            $reserva = Reserva::select('reserva.*')->where('IdUsuario','=',$IdUsuario)->first();
+            return response($reserva,200);
+        }
+        catch(QueryException $e)
+        {
+            return response($e,400);
+        }
+        catch(ModelNotFoundException $e)
+        {
+            return response(null,404);
+        } 
+        
+    } 
+
     public function allReservas()
     {
         

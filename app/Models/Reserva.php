@@ -8,7 +8,7 @@ class Reserva extends Model
 {
     protected $table = 'reserva';
     protected $primaryKey = 'IdReserva';
-    protected $fillable = ['IdReserva','numPersonas','IdEstado','IdUsuario','IdServicio','fechaInicio','fechaFin','valor','numNoches'];
+    protected $fillable = ['IdReserva','numPersonas','IdEstado','IdUsuario','IdServicio','fechaInicio','fechaFin','valor','numNoches','titulo'];
     public $timestamps = false;
 
 
