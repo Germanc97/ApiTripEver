@@ -127,7 +127,7 @@ class ServicioController extends Controller
             $servicio = Servicio::findOrFail($IdServicios);
             $servicio->Titulo = $request->Titulo;
             $servicio->Pais = $request->Pais;
-            $servicio->Cuidad = $request->Cuidad;
+            $servicio->Ciudad = $request->Ciudad;
             $servicio->MaxPersonas = $request->MaxPersonas;
             $servicio->Descripcion = $request->Descripcion;
             $servicio->Precio = $request->Precio;
