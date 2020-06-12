@@ -81,7 +81,7 @@ class UsuarioHostController extends Controller
         {
             $usuarioHost = UsuarioHost::findOrFail($IdHost);
             $usuarioHost->NoCuenta = $request->NoCuenta;
-            $usuarioHost->Mail = $request->Mail;
+            $usuarioHost->MailHost = $request->MailHost;
             $usuarioHost->IdUsuario = $request->IdUsuario;
             $usuarioHost->save(); 
             return response(null,201);

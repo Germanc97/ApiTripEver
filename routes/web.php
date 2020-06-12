@@ -189,7 +189,6 @@ Route::get('/getTipoServicio','TipoServicioController@allTipoServicios');
 Route::put('/updateTipoServicio/{IdTipoServicio?}','TipoServicioController@update');
 
 
-
 /***Tarjetas Regalo****/
 
 Route::get('/getTarjetaRegalo/{NumTarjeta?}','TarjetaRegaloController@getTarjeta');
