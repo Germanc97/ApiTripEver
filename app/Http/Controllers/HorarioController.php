@@ -54,6 +54,26 @@ class HorarioController extends Controller
         
     } 
 
+    public function getHorarioServicio($IdServicio)
+    {
+        try
+        {
+            $horario = Horario::select('horario.*')
+            ->where('horario.IdServicio','=',$IdServicio)->first();
+            
+            return response($horario,200);
+        }
+        catch(QueryException $e)
+        {
+            return response($e,400);
+        }
+        catch(ModelNotFoundException $e)
+        {
+            return response(null,404);
+        } 
+        
+    } 
+
     public function allHorarios()
     {
         

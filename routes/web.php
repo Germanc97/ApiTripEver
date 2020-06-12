@@ -119,6 +119,8 @@ Route::post('/createHorario','HorarioController@create');
 
 Route::get('/getHorario/{IdHorario?}','HorarioController@getHorario');
 
+Route::get('/getHorarioServicio/{IdServicio?}','HorarioController@getHorarioServicio');
+
 Route::get('/getHorarios','HorarioController@allHorarios');
 
 Route::put('/updateHorario/{IdHorario?}','HorarioController@update');
