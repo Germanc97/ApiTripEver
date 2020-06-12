@@ -89,6 +89,8 @@ Route::get('/getReservas','ReservaController@allReservas');
 
 Route::put('/updateReserva/{IdReserva?}','ReservaController@update');
 
+Route::put('/updateEstado/{IdReserva?}','ReservaController@updateEstado');
+
 Route::delete('/deleteReserva/{IdReserva?}','ReservaController@delete');
 
 /***Reseña***/
