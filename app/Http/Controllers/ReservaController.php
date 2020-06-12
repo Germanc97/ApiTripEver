@@ -127,8 +127,7 @@ class ReservaController extends Controller
         catch(ModelNotFoundException $e)
         {
             return response(null,404);
-        } 
-        
+        }  
     }
 
     public function allReservas()
@@ -157,6 +156,25 @@ class ReservaController extends Controller
             $reserva->fechaInicio = $request->fechaInicio;
             $reserva->fechaFin = $request->fechaFin;
             $reserva->valor = $request->valor;
+            $reserva->save(); 
+            return response(null,201);
+        }
+        catch(QueryException $e)
+        {
+            return response($e,400);
+        }
+        catch(ModelNotFoundException $e)
+        {
+            return response($e,404);
+        }        
+    }
+
+    public function updateEstado(Request $request, $IdReserva)
+    {
+        try 
+        {
+            $reserva = Reserva::findOrFail($IdReserva);
+            $reserva->IdEstado = $request->IdEstado;
             $reserva->save(); 
             return response(null,201);
         }
