@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use ApiTripEver\Models\Servicio;
 use ApiTripEver\Models\Horario;
 use ApiTripEver\Models\Hospedaje;
+use ApiTripEver\Models\Cartera;
+use ApiTripEver\Models\UsuarioHost;
 use ApiTripEver\Models\TipoServicio;
 use ApiTripEver\Traits\ServicioHorarioTrait;
 use ApiTripEver\Models\Actividad;
@@ -133,7 +135,6 @@ class ServicioController extends Controller
             $servicio->IdTipoServicio = $request->IdTipoServicio;
             $servicio->save(); 
             return response(null,201);
-
         }
         catch(QueryException $e)
         {
@@ -145,4 +146,27 @@ class ServicioController extends Controller
         }        
     }
 
+    public function updateHostWallet(Request $request, $IdServicio )
+    {
+        try
+        {
+    
+            $servicio = Servicio::where('IdServicio','=',$IdServicio)->first();
+            $usuarioHost = UsuarioHost::where('IdHost','=',$servicio->IdHost)->first();
+            $cartera = Cartera::where('IdUsuario','=',$usuarioHost->IdUsuario)->first();
+            $cartera->Monto = $cartera->Monto + $request->Monto;
+            $cartera->IdUsuario = $usuarioHost->IdUsuario;
+            $cartera->save(); 
+            return response(null,201);
+        }
+        catch(QueryException $e)
+        {
+            return response($e,400);
+        }
+        catch(ModelNotFoundException $e)
+        {
+            return response(null,404);
+        } 
+    }
 }
+

@@ -69,6 +69,8 @@ Route::get('/getServicios','ServicioController@allServicios');
 
 Route::put('/updateServicio/{IdServicios?}','ServicioController@update');
 
+Route::put('/updateHostWallet/{IdServicios?}','ServicioController@updateHostWallet');
+
 Route::delete('/deleteServicio/{IdServicios?}','ServicioController@delete');
 
 /***Reserva***/

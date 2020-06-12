@@ -4,6 +4,7 @@ namespace ApiTripEver\Http\Controllers;
 
 use Illuminate\Http\Request;
 use ApiTripEver\Models\UsuarioHost;
+use ApiTripEver\Models\Cartera;
 use ApiTripEver\Traits\UsuarioUsuarioHostTrait;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\QueryException;
@@ -57,8 +58,7 @@ class UsuarioHostController extends Controller
         catch(ModelNotFoundException $e)
         {
             return response(null,404);
-        } 
-        
+        }         
     }
 
     public function allUsuarios()
@@ -96,4 +96,5 @@ class UsuarioHostController extends Controller
             return response($e,404);
         }        
     }
+
 }
