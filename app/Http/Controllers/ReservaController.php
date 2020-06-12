@@ -116,7 +116,7 @@ class ReservaController extends Controller
         {
             $reserva = Reserva::join('servicios','reserva.IdServicio','=','servicios.IdServicio')
             ->join('estadoReserva','reserva.IdEstado','=','estadoReserva.IdEstado')
-            ->select('estadoReserva.Estado')
+            ->select('estadoReserva.*')
             ->where('reserva.IdReserva','=',$IdReserva) ->first();
             return response($reserva,200);
         }
