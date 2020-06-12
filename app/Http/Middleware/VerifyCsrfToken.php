@@ -82,7 +82,7 @@ class VerifyCsrfToken extends Middleware
         "/updateUser/*",
         "/getHorarioServicio/*",
         "/getTarjetaRegalo/*",
-        "/updateHostWallet/*"
+        "/updateHostWallet/*",
         "/updateEstado/*"
     ];
 }
